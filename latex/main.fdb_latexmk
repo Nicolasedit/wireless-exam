@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1719767668.44576 "/home/spartasci/Documents/wireless-exam/main.tex" "main.pdf" "main" 1719767668.94276 0
-  "/home/spartasci/Documents/wireless-exam/main.tex" 1719762589.89271 126 ccfc4da9967bfd7865accccf0755b5fb ""
+["pdflatex"] 1719921651.22876 "/home/spartasci/Documents/wireless-exam/latex/main.tex" "main.pdf" "main" 1719921651.70144 0
+  "/home/spartasci/Documents/wireless-exam/latex/main.tex" 1719921650.80783 131 455e1053da5e03e2126ac02fb0ba685a ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1716849630 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1716849630 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1716849630 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -27,10 +27,10 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1716849630 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1719175199.71051 325518 3dff2bac5bde75cd7e600320ce8a00d6 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1719174925 7112998 04fb7e15f3c5e92e2ade7a09c8b37b4e ""
-  "main.aux" 1719767668.87426 1508 b6f40bdc52cfcc7f63bc5eaa6e19f7a0 "pdflatex"
-  "main.tex" 1719762589.89271 126 ccfc4da9967bfd7865accccf0755b5fb ""
+  "main.aux" 1719921651.59451 1508 b6f40bdc52cfcc7f63bc5eaa6e19f7a0 "pdflatex"
+  "main.tex" 1719921650.80783 131 455e1053da5e03e2126ac02fb0ba685a ""
   "open.tex" 1719767447.16833 5223 092ecbbc3f1fec7c8ffad1e23feb5441 ""
-  "quiz.tex" 1719767667.20757 4110 01eea0dc8c39e46c33e30ce9e5d7113b ""
+  "quiz.tex" 1719767682.11774 4110 01eea0dc8c39e46c33e30ce9e5d7113b ""
   (generated)
   "main.aux"
   "main.log"
