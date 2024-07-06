@@ -124,6 +124,8 @@
 
 **Describe device authentication in GSM (completare l’immagine con le parti date.)**
 
+[gsm_auth](GSM_auth.png)
+
 **4G networks - techniques used to enhance security**
 
 **GSM Authentication**
