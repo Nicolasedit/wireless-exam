@@ -7,7 +7,11 @@
 
 ## GNSS
 
-**Explain the informations sent by the GNSS satellite to the received and how they are used to compute the PVT**
+**In a GNSS, satellites broadcast crucial information to the users:**
+1. **Identify the crucial pieces of information that satellites broadcast to users.
+List the essential data elements transmitted by GNSS satellites to receivers.**
+2. **Explain how these pieces of information are utilized by a receiver.
+Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT)**
 
 **Difference between Jamming and spoofing in GNSS, how they influence the PVT , what is more harmful and why?**
 
@@ -101,8 +105,9 @@ which types of attacks do these mechanisms allow? (2 points)**
 
 **Differences between BT BR/EDR and BLE (frequencies, FEC/ARQ, …)**
 
-**Which are the privacy offered by Bluetooth?   Describe how the IRK is used to provide resolvable private addresses.**
-
+**Which are the privacy features offered by Bluetooth? Which attack they offer protection to?
+How is the problem solved using the IRK?
+Describe in details how the IRK is used to provide resolvable private addresses**
 
 **What are the 4 association modes in Bluetooth and what capabilities a device must have to support them( in general ); Why they are used? For every association mode, tell which capabilities a device must have to support them (for Numerical comparison the devices must have these capabilities and so on and so forth)**
 
