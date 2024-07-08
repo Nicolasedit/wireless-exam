@@ -1,0 +1,36 @@
+\documentclass{exam}
+\usepackage[utf8]{inputenc}
+
+\newenvironment{mcq}[1]
+{
+    \question #1
+    \begin{checkboxes}
+}
+{
+    \end{checkboxes}
+}
+
+\newenvironment{closed}[1]{%
+  \textbf{#1}\\
+}{%
+  \vspace{1em}
+}
+
+\title{WL questions}
+\date{\today}
+\author{Students}
+
+\begin{document}
+
+\maketitle
+
+% Typeset exams with solutions in LaTeX
+
+\printanswers % Disable this line to hide answers
+\include{questions/open}
+\include{questions/quiz}
+
+
+
+
+\end{document}
