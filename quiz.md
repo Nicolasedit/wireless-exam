@@ -13,10 +13,11 @@
 **What is Asymmetric encryption**
 
 **Associate the correct definition to the following security mechanisms**
-Access Control: Determines and enforce the access rights of the entity depending on the authenticated identityProvides confidentiality for either data or traffic flow information
-Encipherment: Provides confidentiality for either data or traffic flow information
-Traffic Padding: Protects against traffic analysis attacks by adding non essential data to network communicationsAssures data integrity, origin, time, and destination about data communicated between two or more entities
-Notarization: Assures data integrity, origin, time, and destination about data communicated between two or more entities
+
+- Access Control: Determines and enforce the access rights of the entity depending on the authenticated identityProvides confidentiality for either data or traffic flow information
+- Encipherment: Provides confidentiality for either data or traffic flow information
+- Traffic Padding: Protects against traffic analysis attacks by adding non essential data to network communicationsAssures data integrity, origin, time, and destination about data communicated between two or more entities
+- Notarization: Assures data integrity, origin, time, and destination about data communicated between two or more entities
 
 
 ## Wireless Communication
