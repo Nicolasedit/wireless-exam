@@ -180,23 +180,34 @@
     \question{Definition of authenticator supplicant port server authentication}
 
     \question{Consider the maximum goodput one could reach with the following technologies. Put the following options in order from the HIGHEST to the LOWEST:}
-    1. 801.11n RTS/CTS disabled, UDP + IP
-    2. 801.11n RTS/CTS disabled, TCP + IP
-    3. 801.11n RTS/CTS enabled, UDP + IP
-    4. 801.11n RTS/CTS enabled, TCP + IP
-    5. Fast Ethernet, 100Mb/s
-    6. 802.11g RTS/CTS disabled, UDP + IP
-    7. 802.11g RTS/CTS disabled, TCP + IP
-    8. 802.11g RTS/CTS enabled, UDP + IP
-    9. 802.11g RTS/CTS enabled, TCP + IP
+    \begin{solution}
+        \begin{enumerate}
+            \item 802.11n RTS/CTS disabled, UDP + IP
+            \item 802.11n RTS/CTS disabled, TCP + IP
+            \item 802.11n RTS/CTS enabled, UDP + IP
+            \item 802.11n RTS/CTS enabled, TCP + IP
+            \item Fast Ethernet, 100Mb/s
+            \item 802.11g RTS/CTS disabled, UDP + IP
+            \item 802.11g RTS/CTS disabled, TCP + IP
+            \item 802.11g RTS/CTS enabled, UDP + IP
+            \item 802.11g RTS/CTS enabled, TCP + IP
+        \end{enumerate}
+    \end{solution}
 
 
     \question{Associate the correct definition for the following attacks in a WLAN:}
-    - \textbf{WEP Password cracking} → Leverage the reusage of Initialization Vector to create a collision and then break the RC4 key.
-    - \textbf{NAV attack}: → An attack where the attacker manipulates the frame duration value to prevent other devices from accessing the channel.
-    - \textbf{Rouge Access Point}: → A fake AP that impersonates the real AP.
-    - \textbf{De-authentication attack}: → The attacker sends forged de-authentication frames to force a STA to repeat the connection process.
-    - \textbf{Chopchop attack} → The process to recover the plaintext content of a frame by replaying a portion of the original frame.
+    \begin{solution}
+        - \textbf{WEP Password cracking} → Leverage the reusage of Initialization Vector to create a collision and then break the RC4 key.
+
+        - \textbf{NAV attack}: → An attack where the attacker manipulates the frame duration value to prevent other devices from accessing the channel.
+
+        - \textbf{Rouge Access Point}: → A fake AP that impersonates the real AP.
+
+        - \textbf{De-authentication attack}: → The attacker sends forged de-authentication frames to force a STA to repeat the connection process.
+
+        - \textbf{Chopchop attack} → The process to recover the plaintext content of a frame by replaying a portion of the original frame.
+    \end{solution}
+
 
 
     \question{Which of the following information would an attacker require to mount a de-authentication attack against one specific STA in a WLAN?}
@@ -220,12 +231,16 @@
     \end{checkboxes}
 
     \question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are disabled. Put in the correct order over time the sequence of events that would occur:}
-    1. A waits for DIFS time
-    2. A sends the DATA(A) frame
-    3. AP receives the DATA(A) frame
-    4. AP waits for SIFS time
-    5. AP sends ACK(A)
-    6. The transmission is completed
+    \begin{solution}
+        \begin{enumerate}
+            \item A waits for DIFS time
+            \item A sends the DATA(A) frame
+            \item AP receives the DATA(A) frame
+            \item AP waits for SIFS time
+            \item AP sends ACK(A)
+            \item The transmission is completed
+        \end{enumerate}
+    \end{solution}
 
     \question{Why in 802.11 there are two destination mac addresses?}
     \begin{checkboxes}
@@ -245,31 +260,39 @@
         \choice Static encryption keys manually configured by the user.
     \end{checkboxes}
 
-    **Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are DISABLED.
-    A and B wake up at the same time to send a data frame, creating thus a collision.
-    Put in the right sequence the frames and events that could occur in time.**
-    1. A wait for DIFS and sends a DATA(A) frame
-    2. B wait for DIFS and sends a DATA(B) frame
-    3. DATA(A) collides with DATA(B)
-    4. A and B wait for the AP's ACK
-    5. Neither A nor B received the ACK, so they backoff
-    6. A wait 10ms and tries to retransmit DATA(A)
-    7. B wait 20ms and listen to the channel, sensing its busy with DATA(A) transmission
-    8. AP receives DATA(A)
-    9. AP sends an ACK to A
+    \question{Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are \textit{DISABLED}.
+        A and B wake up at the same time to send a data frame, creating thus a collision.
+        Put in the right sequence the frames and events that could occur in time.}
+    \begin{solution}
+        \begin{enumerate}
+            \item A sends a DATA(A) frame
+            \item B sends a DATA(B) frame
+            \item DATA(A) collides with DATA(B)
+            \item A and B wait for the AP's ACK
+            \item Neither A nor B received the ACK, so they backoff
+            \item A waits 10ms and tries to retransmit DATA(A)
+            \item B waits 20ms and listens to the channel, sensing its busy with DATA(A) transmission
+            \item AP receives DATA(A)
+            \item AP sends an ACK to A
+        \end{enumerate}
+    \end{solution}
 
-    **Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are ENABLED.
-    A and B wake up at the same time to send a data frame, creating thus a collision.
-    Put in the right sequence the frames and events that could occur in time.**
-    1. A sends a RTS
-    2. B sends a RTS
-    3. RTS sent by A collides with RTS sent by B
-    4. A waits 10ms and tries to retransmit the RTS
-    5. B waits 20ms and tries to retransmit the RTS
-    6. AP receives the RTS from A and sends a CTS(A)
-    7. A and B receive the CTS(AP)
-    8. A sends a DATA frame while B defers its transmission
-    9. AP sends an ACK to A
+    \question{Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are \textit{ENABLED}.
+        A and B wake up at the same time to send a data frame, creating thus a collision.
+        Put in the right sequence the frames and events that could occur in time.}
+    \begin{solution}
+        \begin{enumerate}
+            \item A sends a RTS
+            \item B sends a RTS
+            \item RTS sent by A collides with RTS sent by B
+            \item A waits 10ms and tries to retransmit the RTS
+            \item B waits 20ms and tries to retransmit the RTS
+            \item AP receives the RTS from A and sends a CTS(A)
+            \item A and B receive the CTS(AP)
+            \item A sends a DATA frame while B defers its transmission
+            \item AP sends an ACK to A
+        \end{enumerate}
+    \end{solution}
 
     \question{Why in a WLAN it is not sufficient to use the CSMA-CD protocol used in Ethernet?}
     \begin{checkboxes}
@@ -288,6 +311,20 @@
         \CorrectChoice Ignoring de-authentication frames entirely.
         \choice None of the other options.
     \end{checkboxes}
+
+    \question{Put in the correct order the messages the station and the AP exchange before starting the data exchange:}
+    \begin{solution}
+        \begin{enumerate}
+            \item AP send the Beacon
+            \item STA sends the Probe request
+            \item AP sends the Probe response
+            \item STA sends the Authentication request
+            \item AP sends the Authentication response
+            \item STA sends the Association request
+            \item AP sends the Association response
+        \end{enumerate}
+        Other blocks were not utilized.
+    \end{solution}
 
 
     \section{WPAN / Bluetooth}
@@ -356,15 +393,25 @@
     \end{checkboxes}
 
 
-    \question{Describe device authentication in GSM (completare l’immagine con le parti date.)}
+    \question{Describe device authentication in GSM (completare l'immagine con le parti date.)}
+    \begin{solution}
+        \center
+        \includegraphics[width=0.7\textwidth]{images/GSM_auth.png}
+    \end{solution}
 
-    % ![gsm_auth](GSM_auth.png) TODO add this image
 
     \question{4G networks - techniques used to enhance security}
 
     \question{GSM Authentication}
 
-    \question{Wifi rate adaptation}
+    \question{What is the primary purpose of rate adaptation in WiFi networks?}
+    \begin{checkboxes}
+        \choice To adjust the transmission power of devices based on network conditions.
+        \choice To select the optimal data rate for transmitting data over the wireless channel based on the AP transmitter power.
+        \choice To select the optimal data rate for transmitting data over the wireless channel based on the distance from the AP.
+        \choice To adjust the transmission power of devices dynamically.
+        \CorrectChoice None of the others.
+    \end{checkboxes}
 
     \question{What is the primary purpose of handover in mobile networks?}
     \begin{checkboxes}
@@ -428,6 +475,15 @@
         \choice None of the other options.
         \CorrectChoice The IMSI is a unique identifier assigned to a mobile subscriber by the home network, while the TMSI is a temporary identifier used to protect the subscriber's identity during communications with the network.
         \choice The IMSI is used for billing and account management, while the TMSI is used for data encryption.
+    \end{checkboxes}
+
+    \question{How does the GSM network authenticate a subscriber using the SIM card?}
+    \begin{checkboxes}
+        \choice By requiring the subscriber to enter a personal identification number (PIN).
+        \choice By sending a challenge (RAND) to the Authentication Center, which generates a response (SRES) using the Ki key.
+        \choice By sending a challenge (RAND) to the SIM card, which generates a response (SRES) using the TMSI key.
+        \choice By sending a challenge (RAND) to the SIM card, which generates a response (SRES) using the IMSI key.
+        \CorrectChoice None of the other options.
     \end{checkboxes}
 
 

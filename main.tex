@@ -1,24 +1,19 @@
 \documentclass{exam}
-\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{amssymb} % This package is needed for the \square symbol
 
-\newenvironment{mcq}[1]
-{
-    \question #1
-    \begin{checkboxes}
-}
-{
-    \end{checkboxes}
-}
 
-\newenvironment{closed}[1]{%
-  \textbf{#1}\\
-}{%
-  \vspace{1em}
-}
-
+\graphicspath{ {./images/} }
 \title{Wireless Security questions}
 \date{\today}
 \author{Students}
+
+% Exam document class settings
+\CorrectChoiceEmphasis{\color{DarkGreen}}
+\checkboxchar{$\circ$}
+\checkedchar{$\surd$}
 
 \begin{document}
 
