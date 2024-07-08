@@ -13,7 +13,12 @@
 
 **Describe meaconing compare work other type of GNSS ATTACKS.**
 
-**Describe two interferences mitigation techniques in GNSS**
+**Interference detection methods can vary in their approaches within GNSS receivers.**
+   1. List some interference detection methods used in GNSS receivers. (2 points)
+      - Identify at least two different methods used for interference detection.
+   2. Briefly describe each interference detection method. (4 points)
+      - Provide a concise explanation of how each method detects interference within GNSS receivers.
+      - Discuss the advantages or limitations of each method (e.g. in terms of effectiveness and implementation complexity).
 
 **Explain in general detection and mitigation techniques for interference signals in both domain. Explain in detail mitigation technique in frequency domain and in time domain**
 
@@ -76,6 +81,17 @@ case 2 - ESSID is hidden, AP does not broadcast WLAN EISS in beacons (2 points)
 (enumerate the steps)
 which types of attacks do these mechanisms allow? (2 points)**
 
+**Describe and sketch the sequences of messages a STA and an AP exchange during the initial Association and Authentication process in an Open System. Consider both the case in which**
+   1. The AP broacasts the beacon messages (2 points)
+   2. The ESSID is hidden and the AP does not broadcast the WLAN ESSIS in the beacons (2 points).
+
+   What type of attacks such mechanisms allow? (2 points)  
+   To describe the timeline, you can use a numbered list and state who sends what to who, or which computations a device does with some information:
+   1. STA sends frame XXX to AP
+   2. AP sends frama YYY to broadcast
+   3. STA extracts ZZZ from YYY and computes KKK, YYY, LLL
+   4. ...
+
 
 
 
@@ -92,12 +108,13 @@ which types of attacks do these mechanisms allow? (2 points)**
 
 **Bluetooth modes OOB, Just works, passkey entry, numeric comparison and hardware required to use them**
 
-**Describe the 4 states of a Bluetooth device (standby, advertiser, scanner, initiator and master/slave) (3 porints) and prove an example with all the steps, A sends frame to B, B sends broadcast to A, A extract YYYY, ZZZZ from XXX to get GGGG etc (3 points)**
+**Describe the 4 states of a Bluetooth device (standby, advertiser, scanner, initiator and master/slave) (3 points) and prove an example with all the steps, A sends frame to B, B sends broadcast to A, A extract YYYY, ZZZZ from XXX to get GGGG etc (3 points)**
 
-**Explain the main design goals for the BT technology and the technical constraints that guided the design (2 pts). Describe BT network topologies and the role of nodes in each scenario (2 pts). Describe the physical layer com mechanisms implemented in BT BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides etc. (2 pts)**
+**Explain the main design goals for the BT technology and the technical constraints that guided the design (2 pts). Describe BT network topologies and the role of nodes in each scenario (2 pts).  
+Describe the physical layer com mechanisms implemented in BT BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides etc. (2 pts)**
 
-**Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)
-What is the goal of implementing such association models? (1 point)
+**Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)  
+What is the goal of implementing such association models? (1 point)  
 what are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)**
 
 ## WWAN - mobile
