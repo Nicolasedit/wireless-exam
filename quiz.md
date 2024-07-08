@@ -1,6 +1,6 @@
 # Quiz or closed questions
 
-## General
+## Cryptography
 
 **What is a stream cipher?**
 
@@ -12,8 +12,14 @@
 
 **What is Asymmetric encryption**
 
+**Associate the correct definition of the following Security Services:**
+- **Non-repudiation:** Assurance that someone cannot deny the validity of something.
+- **Confidentiality:** Ensuring that information is accessible only to those authorized to have access.
+- **Availability:** Ensuring that authorized users have access to information and associated assets when required.
+- **Integrity:** Maintaining and assuring the accuracy and completeness of data over its entire lifecycle.
 
-## Wireless Communication
+
+## Signals and basics
 
 **In digital Communication system which type of waveforms are propagated in the channel?**
 
@@ -23,13 +29,36 @@
 
 **PSK modulation - about the energy level of symbols and saturation level of a power amplifier**
 
+**A digital communication system uses a 2-PAM modulation with rectangular pulses and a given average energy per symbol ***E_s***. What happens if we adopt instead a 4-PAM modulation, using the same basic pulse and average energy per symbol ***E_s***?**
+- [ ] The bitrate decreases, but the system becomes more robust to errors.
+- [x] The bitrate increases, but the system becomes more error prone.
+- [ ] The bandwidth efficiency increases resulting in a generally larger bandwidth of the transmitted signals.
+- [ ] The bandwidth efficiency decreases resulting in a generally larger bandwidth of the transmitted signals.
+- [ ] None of the other options.
+
+
 
 ## GNSS
+
 **How can a spoofing attack be detected?**
 
-**Why monitoring GNSS spectrum is insufficient for spoofing detection?**
+**Why is monitoring the GNSS spectrum alone often insufficient for comprehensive spoofing detection?**
+- [ ] Spectrum monitoring is too slow to detect real-time attacks.
+- [x] It only detects changes in signal strength and frequency, not the content or integrity of the signals.
+- [x] Spoofers can closely mimic legitimate signal parameters, making detection challenging.
+- [ ] It cannot differentiate between different types of interference.
+- [ ] None of the other options.
 
-**GNSS - Why is line of sight to satellites important to have correct pseudorange calculations?**
+
+**Why is it important to receive signals in Line-of-Sight to build profitable pseudoranges?**
+
+- [x] Because line-of-sight signals are not delayed by reflections. Multipath can cause the receiver to calculate a longer travel time, leading to erroneous pseudorange calculations.
+- [x] Because Line-of-sight signals travel the shortest and most direct path from the satellite to the receiver. This ensures that the signal strength is higher and minimal attenuation is experienced leading to a higher signal-to-noise ratio.
+- [ ] Because satellites in line-of-sight yield to better geometrical conditions to estimate the position and therefore to a lower GDOP.
+- [ ] Because measurements performed in line-of-sight maintain synchronization between the user and the satellite.
+- [ ] None of the other options.
+
+
 
 **Are the clocks of Satellite and receiver synchronized?**
 
@@ -89,6 +118,30 @@
 - [ ] DEAUTH
 - [ ] CHOP-CHOP
 
+**Which of the following information would an attacker require to mount a de-authentication attack against one specific STA in a WLAN?**
+- [x] The AP MAC address
+- [x] The STA MAC address
+- [x] The WLAN channel
+- [ ] The WLAN ESSID
+- [ ] None of the other options.
+
+
+
+**Why in 802.11 there are two destination mac addresses?**
+- [x] The first indicates the AP that has to receive the frame. The second indicates the interface of the router that frame is destined to.
+- [ ] To correctly identify the STA sending the frame.
+- [ ] For anonymisation.
+- [ ] For error correction.
+- [ ] None of the other options.
+
+**Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are disabled. Put in the correct order over time the sequence of events that would occur:**
+1. A waits for DIFS time
+2. A sends the DATA(A) frame
+3. AP receives the DATA(A) frame
+4. AP waits for SIFS time
+5. AP sends ACK(A)
+6. The transmission is completed
+
 
 ## WPAN / Bluetooth
 
@@ -101,7 +154,13 @@
 
 **What is bluesnarfing?**
 
-**BT secure services**
+**Which security services does Bluetooth support?**
+- [x] Authorization
+- [x] Confidentiality
+- [x] Authentication
+- [ ] Notarization
+- [ ] None of the other options.
+
 
 **How prevent MITM on Bluetooth Secure Simple Pairing?**
 
@@ -120,7 +179,13 @@
 
 **Purpose of paging and location are in mobile network**
 
-**Differences between VLR and HLR**
+**What is the difference between the Visitor Location Register (VLR) and the Home Location Register (HLR) in GSM networks?**
+- [x] The VLR is a temporary database that stores information about subscribers currently roaming in the coverage area, while the HLR is a permanent database that contains detailed subscriber information and is maintained by the subscriber's home network.
+- [ ] The VLR handles billing and account information for roaming subscribers, while the HLR manages encryption keys and authentication data.
+- [ ] The VLR is responsible for managing voice call routing, while the HLR handles data transmission services.
+- [ ] The VLR stores the IMSI and Ki keys, while the HLR stores the subscriber's phonebook and SMS messages.
+- [ ] None of the other options.
+
 
 **Describe device authentication in GSM (completare l’immagine con le parti date.)**
 
@@ -132,6 +197,11 @@
 
 **Wifi rate adaptation**
 
-**Handover (mobile)**
+**What is the primary purpose of handover in mobile networks?**
+- [ ] To encrypt voice and data transmissions for secure communication.
+- [ ] To seamslessy transfer an active call or data session from one mobile teriminal to another.
+- [ ] To manage billing and account information for mobile subscribers when they move between to Base Stations.
+- [ ] To increase the data transmission speed betwen mobile devices.
+- [x] None of the other options.
 
-**
+

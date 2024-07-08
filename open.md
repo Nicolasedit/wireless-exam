@@ -29,6 +29,11 @@ For each of the countermeasures mentioned above, indicate the level(s) at which 
 
 **What are the effects of a spoofing attack on a GNSS receiver? (2 pts) How can a receiver fail or fail to respond to a spoofing attack? (2 pts) Possible disruptions of the attack? (2 pts)**
 
+**In a GNSS, satellites broadcast crucial information to the users.**
+   1. Identify the crucial pieces of information that satellites broadcast to users. (2 points) 
+      - List the essential data elements transmitted by GNSS satellites to receivers.
+   2. Explain how these pieces of information are utilized by a receiver. (4 points) 
+      - Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).**
 
 ## WLAN - wifi
 
@@ -91,5 +96,8 @@ which types of attacks do these mechanisms allow? (2 points)**
 
 **Explain the main design goals for the BT technology and the technical constraints that guided the design (2 pts). Describe BT network topologies and the role of nodes in each scenario (2 pts). Describe the physical layer com mechanisms implemented in BT BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides etc. (2 pts)**
 
+**Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)
+What is the goal of implementing such association models? (1 point)
+what are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)**
 
 ## WWAN - mobile
