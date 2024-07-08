@@ -29,6 +29,13 @@
 - **Availability:** Ensuring that authorized users have access to information and associated assets when required.
 - **Integrity:** Maintaining and assuring the accuracy and completeness of data over its entire lifecycle.
 
+**What is the key difference between a monoalphabetic and a polyalphabetic cipher?**
+- [ ] The method of rearranging the order of letters.
+- [ ] The use of multiple keys for encryption.
+- [ ] The length of the plaintext that can be encrypted.
+- [x] The complexity of the substitution pattern used.
+- [ ] None of the other options.
+
 
 ## Signals and basics
 
@@ -101,6 +108,13 @@ TX --> Encoder --> Modulator  --> Channel  --> Demodulator  --> Decoder  --> RX
 - [ ] No, never. Neither before nor after the user position estimation.
 - [X] Not really. However, the user clock can be considered synchronized after the
 continuous estimation of the user clock bias which is time-varying.
+
+**What is the minimum number of satellite signals that a GNSS receiver needs to track to correctly solve the positioning problem?**
+- [ ] 1
+- [ ] 2
+- [ ] 3
+- [x] 4
+- [ ] None of the other options.
 
 
 **Assume a radionavigation system which, like a GNSS, is based on signal travelling time measurements between transmitters and receiver. What is the difference between a pseudorange and a range measurement for such a system?**
@@ -206,6 +220,35 @@ Put in the right sequence the frames and events that could occur in time.**
 8. AP receives DATA(A)
 9. AP sends an ACK to A
 
+**Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are ENABLED.
+A and B wake up at the same time to send a data frame, creating thus a collision.
+Put in the right sequence the frames and events that could occur in time.**
+1. A sends a RTS
+2. B sends a RTS
+3. RTS sent by A collides with RTS sent by B
+4. A waits 10ms and tries to retransmit the RTS
+5. B waits 20ms and tries to retransmit the RTS
+6. AP receives the RTS from A and sends a CTS(A)
+7. A and B receive the CTS(AP)
+8. A sends a DATA frame while B defers its transmission
+9. AP sends an ACK to A
+
+**Why in a WLAN it is not sufficient to use the CSMA-CD protocol used in Ethernet?**
+
+- [x] It will be impossible to detect an eventual collision by the transmitter because the transmitted signal power would be much stronger than the received signal power.
+- [x] The WLAN transmitter can either transmit or receive, making it impossible to detect collisions when they occur.
+- [ ] CSMA-CD requires a bidirectional channel to work. In WLAN there is only one single shared channel.
+- [ ] CSMA-CD requires an additional channel to signal collisions.
+- [ ] None of the other options
+
+**Which of the following are effective defenses against deauthentication attacks in WiFi networks?**
+- [ ] Disabling encryption to improve performance.
+- [x] Honour only de-authentication requests that have the same physical layer properties of other messages sent by such a STA.
+- [x] Honour de-authentication requests only from STAs that remain idle for the next 15 seconds.
+- [x] Ignoring de-authentication frames entirely.
+- [ ] None of the other options.
+
+
 ## WPAN / Bluetooth
 
 **How does Bluetooth Classic handle privacy concerns compared to Bluetooth LE?**
@@ -306,3 +349,18 @@ Put in the right sequence the frames and events that could occur in time.**
 - [ ] Small cells are only suitable for urban areas, while larger cells can only be used in rural areas.
 - [ ] Small cells reduce interference and improve signal quality, whereas larger cells are prone to higher levels of interference and degraded signal quality.
 - [X] Small cells provide higher capacity and better coverage in dense areas but may require more frequent handovers as users move, while larger cells cover wider areas with fewer handovers but might have lower capacity in dense environments.
+
+**Which of the following technologies are used in 4G networks to enhance security?**
+- [x] Advanced Encryption Standard (AES) for data encryption.
+- [x] Non-Access Stratum (NAS) security for signaling protection.
+- [ ] Implementation of advanced firewall technologies at the network core.
+- [ ] Temporary Mobile Subscriber Identity (TMSI) for user anonymity.
+- [ ] None of the other options.
+
+**What is the difference between the IMSI and the TMSI in mobile networks?**
+
+- [ ] The IMSI identifies the mobile device, while the TMSI identifies the subscriber's location area.
+- [ ] The IMSI is a randomly generated number used for secure authentication, while the TMSI is a fixed identifier stored on the SIM card.
+- [ ] None of the other options.
+- [x] The IMSI is a unique identifier assigned to a mobile subscriber by the home network, while the TMSI is a temporary identifier used to protect the subscriber's identity during communications with the network.
+- [ ] The IMSI is used for billing and account management, while the TMSI is used for data encryption.

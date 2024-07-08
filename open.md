@@ -44,6 +44,16 @@ For each of the countermeasures mentioned above, indicate the level(s) at which 
    2. Explain how these pieces of information are utilized by a receiver. (4 points) 
       - Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).**
 
+**Describe the effect of pseudorange errors on the Position, Velocity, and Time (PVT) solution and explain the role of the Dilution of Precision factor (e.g., GDOP, HDOP).**
+1. Explain the effect of pseudorange errors on the Position, Velocity, and Time (PVT) solution.
+(3 points)
+Describe how errors in the measurement of pseudoranges from GNSS satellites affect the accuracy
+of the PVT solution.
+2. Discuss the role of the Dilution of Precision (DOP) factor in GNSS positioning. (3 points)
+Define what Dilution of Precision (DOP) factors (e.g., GDOP, HDOP) represent in GNSS.
+Discuss the relationship between DOP values and the accuracy and reliability of the PVT solution.
+Provide examples of scenarios where high and low DOP values impact GNSS performance.
+
 ## WLAN - wifi
 
 **Power saving mode in 802.11 + attack**
@@ -121,5 +131,24 @@ Describe the physical layer com mechanisms implemented in BT BR/EDR and the diff
 **Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)  
 What is the goal of implementing such association models? (1 point)  
 what are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)**
+
+**Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario.(2 points). Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (4 points)** 
+
+The main goal for Bluetooth technology was to create a wireless cable rather than a wireless network. It is designed to be ubiquitous, inexpensive, and close range (<10m).
+
+In the Bluetooth protocol, we always have a master device and a slave device, forming a piconet. There can be a maximum of 7 devices in a single piconet, and we can create scatternets by connecting piconets with each other. Communication between piconets can occur via a device that acts as a slave in one piconet and a master in another, or via a device that acts as a master in one and a slave in another. A device CANNOT be a master in both piconets. Within master-slave communications, the master decides when the slaves should communicate with it, and slave devices cannot communicate directly with each other.
+
+The physical layer communication mechanism is implemented using FHSS (Frequency Hopping Spread Spectrum), which involves dividing the general channel into smaller channels and using a pattern (or a pre-specified one) to jump (hop) from one channel to another. This is done to prevent or at least complicate sniffing attacks. There is a special version of FHSS called Adaptive FHSS, where devices use statistical algorithms to choose which channels to hop on based on the least busy ones. However, if all devices use this mode, they will consequently hop to the same channels, making them busier and reducing overall communication effectiveness.
+
+The frequency band used for both BR/EDR and BLE ranges from 2.4GHz to 2.485GHz, which is typically very busy. The two versions use a different number of channels: BR/EDR uses 79 channels, hopping every 1600ms, while BLE uses 40 channels, of which 37 are reserved for data. Because this frequency band is very busy, ARQ (Automatic Repeat reQuest) and FEC (Forward Error Correction) mechanisms are implemented. 
+
+ARQ uses ACK (acknowledgment) and NACK (negative acknowledgment) messages to ensure the correct reception of messages, which is especially important given the busy frequency. 
+
+FEC directly influences efficiency and can be implemented in two ways: 1/3 efficiency, where each message is sent over the channel 3 times, and 2/3 efficiency, where for every 10 bits of data, 5 bits of error correction codes are sent, capable of correcting 1-bit errors and detecting 2-bit errors.
+
+**Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario. (2 points).
+Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the
+differences since BLE was introduced: which frequency range does it use, which multiple access scheme does
+it use, which FEC/ARQ mechanism it provides, etc. (4 points)**
 
 ## WWAN - mobile
