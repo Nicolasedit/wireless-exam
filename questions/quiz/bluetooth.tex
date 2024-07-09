@@ -1,0 +1,77 @@
+\section{Bluetooth protocol and security}
+
+\question{How does Bluetooth Classic handle privacy concerns compared to Bluetooth LE?}
+\begin{checkboxes}
+    \choice Bluetooth Classic uses encryption keys for all data transmissions.
+    \choice Bluetooth Classic limits the number of devices that can connect simultaneously.
+    \choice Bluetooth Classic randomizes MAC addresses for improved privacy.
+    \choice Bluetooth Classic does not have any privacy features.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{What is the Bluesnarfing attack?}
+\begin{checkboxes}
+    \choice A vulnerability that allows unauthorized access to Bluetooth devices via malicious code execution.
+    \choice A method for securely pairing Bluetooth devices using encryption keys.
+    \choice A feature that enhances Bluetooth data transmission speed.
+    \choice A protocol used for secure pairing in Bluetooth devices.
+    \CorrectChoice None of the other options.
+\end{checkboxes}
+
+\question{Which security services does Bluetooth support?}
+\begin{checkboxes}
+    \CorrectChoice Authorization
+    \CorrectChoice Confidentiality
+    \CorrectChoice Authentication
+    \choice Notarization
+    \choice None of the other options.
+\end{checkboxes}
+
+
+\question{How prevent MITM on Bluetooth Secure Simple Pairing?}
+
+\question{Which multiple access mechanism BT uses?}
+
+\question{What is Bluetooth LE Privacy Feature?}
+\begin{checkboxes}
+    \choice A feature that encrypts all data transmitted over Bluetooth Low Energy (LE).
+    \CorrectChoice A feature that generates random MAC addresses for advertising packets.
+    \choice A feature that hides the Bluetooth device from unauthorized scanning.
+    \choice A feature that restricts the range of Bluetooth connections to improve privacy.
+    \choice None of the other options.
+\end{checkboxes}
+
+
+\question{What is pairing in Bluetooth technology? Select one:}
+\begin{checkboxes}
+    \choice A method for managing power consumption in Bluetooth devices.
+    \CorrectChoice The process of establishing a Bluetooth connection between two devices.
+    \choice A mechanism for securely storing Bluetooth device information for future connections.
+    \choice None of the other options.
+    \choice A protocol for encrypting Bluetooth data transmissions.
+\end{checkboxes}
+
+
+\question{Consider the Bluetooth Authentication sketched in the figure below.}
+\begin{solution}
+    \begin{enumerate}
+        \item A sends its Public Key PKa
+        \item B sends its Public Ket PKb
+        \item B selects a Random value Nb
+        \item A selects a Random value Na
+        \item B computes the confirmation Cb = f4(Pkb, Pia, Nb, 0)
+        \item B sends the confirmation Cb to A
+        \item A sends its nonce Na
+        \item B sends its nonce Nb
+        \item A checks if Cb = f4(Pkb, Pia, Nb, 0)
+    \end{enumerate}
+\end{solution}
+
+\question{What is bonding in Bluetooth technology?}
+\begin{checkboxes}
+    \choice A mechanism for optimizing Bluetooth connection range.
+    \choice A method for encrypting data packets during Bluetooth transmission.
+    \CorrectChoice A process of permanently storing Bluetooth device information after successful pairing.
+    \choice A protocol for managing multiple simultaneous Bluetooth connections.
+    \choice None of the other options.
+\end{checkboxes}

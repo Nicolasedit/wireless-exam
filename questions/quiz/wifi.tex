@@ -1,0 +1,242 @@
+\section{WiFi}
+
+\question{Which of the following topologies are possible in a Wireless LAN?}
+\begin{checkboxes}
+    \choice Point-to-point mode
+    \choice High speed mode
+    \CorrectChoice Infrastructure-based mode
+    \CorrectChoice Ad-hoc mode
+    \choice None of the other options
+
+\end{checkboxes}
+
+\question{Two devices connected in Wi-Fi without RTS/CTS assumed to collide, order what happened (and there where a series of steps like A sends, B, sends, DATA(A) collide with DATA(B) etc,)}
+
+\question{Sort the exchanged messages to connect to an AP}
+
+\question{Algorithm used in OWE}
+
+\question{How does WEP key management compare to WPA/WPA2 key management?}
+\begin{checkboxes}
+    \choice WEP is more efficient and faster than WPA/WPA2 in managing keys.
+    \choice WEP uses dynamic keys that change frequently, unlike WPA/WPA2.
+    \CorrectChoice WEP is considered insecure due to its use of static keys, whereas WPA/WPA2 use more secure key management protocols.
+    \choice WEP provides stronger encryption and is more secure than WPA/WPA2.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{why not csma/ cd in wifi}
+
+\question{authentication service - in the context of wireless networks}
+
+\question{CDMA networks - why is power control important?}
+
+\question{Purpose of DIFS in wifi networks}
+
+\question{802.11 network - using ISM BW range, how many independent channels can be used?}
+
+\question{Which wifi protocols are considered secure? (wpa with tkip, wpa2, wep, wpa3 )}
+
+\question{Definition of authenticator supplicant port server authentication}
+
+\question{What is the primary purpose of rate adaptation in WiFi networks?}
+\begin{checkboxes}
+    \choice To adjust the transmission power of devices based on network conditions.
+    \choice To select the optimal data rate for transmitting data over the wireless channel based on the AP transmitter power.
+    \choice To select the optimal data rate for transmitting data over the wireless channel based on the distance from the AP.
+    \choice To adjust the transmission power of devices dynamically.
+    \CorrectChoice None of the others.
+\end{checkboxes}
+
+\question{Consider the maximum goodput one could reach with the following technologies. Put the following options in order from the HIGHEST to the LOWEST:}
+\begin{solution}
+    \begin{enumerate}
+        \item 802.11n RTS/CTS disabled, UDP + IP
+        \item 802.11n RTS/CTS disabled, TCP + IP
+        \item 802.11n RTS/CTS enabled, UDP + IP
+        \item 802.11n RTS/CTS enabled, TCP + IP
+        \item Fast Ethernet, 100Mb/s
+        \item 802.11g RTS/CTS disabled, UDP + IP
+        \item 802.11g RTS/CTS disabled, TCP + IP
+        \item 802.11g RTS/CTS enabled, UDP + IP
+        \item 802.11g RTS/CTS enabled, TCP + IP
+    \end{enumerate}
+\end{solution}
+
+
+\question{Associate the correct definition for the following attacks in a WLAN:}
+\begin{solution}
+    - \textbf{WEP Password cracking} → Leverage the reusage of Initialization Vector to create a collision and then break the RC4 key.
+
+    - \textbf{NAV attack}: → An attack where the attacker manipulates the frame duration value to prevent other devices from accessing the channel.
+
+    - \textbf{Rouge Access Point}: → A fake AP that impersonates the real AP.
+
+    - \textbf{De-authentication attack}: → The attacker sends forged de-authentication frames to force a STA to repeat the connection process.
+
+    - \textbf{Chopchop attack} → The process to recover the plaintext content of a frame by replaying a portion of the original frame.
+\end{solution}
+
+
+
+\question{Which of the following information would an attacker require to mount a de-authentication attack against one specific STA in a WLAN?}
+\begin{checkboxes}
+    \CorrectChoice The AP MAC address
+    \CorrectChoice The STA MAC address
+    \CorrectChoice The WLAN channel
+    \choice The WLAN ESSID
+    \choice None of the other options.
+\end{checkboxes}
+
+
+
+\question{Why in 802.11 there are two destination mac addresses?}
+\begin{checkboxes}
+    \CorrectChoice The first indicates the AP that has to receive the frame. The second indicates the interface of the router that frame is destined to.
+    \choice To correctly identify the STA sending the frame.
+    \choice For anonymisation.
+    \choice For error correction.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are disabled. Put in the correct order over time the sequence of events that would occur:}
+\begin{solution}
+    \begin{enumerate}
+        \item A waits for DIFS time
+        \item A sends the DATA(A) frame
+        \item AP receives the DATA(A) frame
+        \item AP waits for SIFS time
+        \item AP sends ACK(A)
+        \item The transmission is completed
+    \end{enumerate}
+\end{solution}
+
+\question{Why in 802.11 there are two destination mac addresses?}
+\begin{checkboxes}
+    \choice In case there are multiple APs, to indicate the two APs that should receive and process the frame.
+    \choice For error correction
+    \choice For anonymisation
+    \CorrectChoice None of the other options.
+    \choice To correctly identify the STA sending the frame
+\end{checkboxes}
+
+\question{What type of encryption does OWE use to secure data in transit?}
+\begin{checkboxes}
+    \CorrectChoice Diffie-Hellman key exchange to establish a shared secret.
+    \choice Asymmetric encryption using RSA keys.
+    \choice Symmetric key encryption with a pre-shared key.
+    \choice None of the other options.
+    \choice Static encryption keys manually configured by the user.
+\end{checkboxes}
+
+\question{Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are \textit{DISABLED}.
+    A and B wake up at the same time to send a data frame, creating thus a collision.
+    Put in the right sequence the frames and events that could occur in time.}
+\begin{solution}
+    \begin{enumerate}
+        \item A sends a DATA(A) frame
+        \item B sends a DATA(B) frame
+        \item DATA(A) collides with DATA(B)
+        \item A and B wait for the AP's ACK
+        \item Neither A nor B received the ACK, so they backoff
+        \item A waits 10ms and tries to retransmit DATA(A)
+        \item B waits 20ms and listens to the channel, sensing its busy with DATA(A) transmission
+        \item AP receives DATA(A)
+        \item AP sends an ACK to A
+    \end{enumerate}
+\end{solution}
+
+\question{Consider two STA, A and B, that belong to a WLAN managed by an AP. RTS/CTS are \textit{ENABLED}.
+    A and B wake up at the same time to send a data frame, creating thus a collision.
+    Put in the right sequence the frames and events that could occur in time.}
+\begin{solution}
+    \begin{enumerate}
+        \item A sends a RTS
+        \item B sends a RTS
+        \item RTS sent by A collides with RTS sent by B
+        \item A waits 10ms and tries to retransmit the RTS
+        \item B waits 20ms and tries to retransmit the RTS
+        \item AP receives the RTS from A and sends a CTS(A)
+        \item A and B receive the CTS(AP)
+        \item A sends a DATA frame while B defers its transmission
+        \item AP sends an ACK to A
+    \end{enumerate}
+\end{solution}
+
+\question{Why in a WLAN it is not sufficient to use the CSMA-CD protocol used in Ethernet?}
+\begin{checkboxes}
+    \CorrectChoice It will be impossible to detect an eventual collision by the transmitter because the transmitted signal power would be much stronger than the received signal power.
+    \CorrectChoice The WLAN transmitter can either transmit or receive, making it impossible to detect collisions when they occur.
+    \choice CSMA-CD requires a bidirectional channel to work. In WLAN there is only one single shared channel.
+    \choice CSMA-CD requires an additional channel to signal collisions.
+    \choice None of the other options
+\end{checkboxes}
+
+\question{Which of the following are effective defenses against deauthentication attacks in WiFi networks?}
+\begin{checkboxes}
+    \choice Disabling encryption to improve performance.
+    \CorrectChoice Honour only de-authentication requests that have the same physical layer properties of other messages sent by such a STA.
+    \CorrectChoice Honour de-authentication requests only from STAs that remain idle for the next 15 seconds.
+    \CorrectChoice Ignoring de-authentication frames entirely.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{Put in the correct order the messages the station and the AP exchange before starting the data exchange:}
+\begin{solution}
+    \begin{enumerate}
+        \item AP send the Beacon
+        \item STA sends the Probe request
+        \item AP sends the Probe response
+        \item STA sends the Authentication request
+        \item AP sends the Authentication response
+        \item STA sends the Association request
+        \item AP sends the Association response
+    \end{enumerate}
+    Other blocks were not utilized.
+\end{solution}
+
+\question{What type of encryption does OWE use to secure data in transit?}
+\begin{checkboxes}
+    \choice Asymmetric encryption using RSA keys.
+    \choice Static encryption keys manually configured by the user.
+    \choice Symmetric key encryption with a pre-shared key.
+    \CorrectChoice Diffie-Hellman key exchange to establish a shared secret.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{Select the TRUE answers among the following ones about the purposes of CSMA-CA in wireless networking.}
+\begin{checkboxes}
+    \CorrectChoice It tries to prevent collisions during data transmission.
+    \CorrectChoice It ensures all devices have equal access to the wireless medium.
+    \CorrectChoice It cannot prevent collisions entirely, especially in high-density networks.
+    \choice It encrypts data packets for secure transmission.
+    \choice None of the other options.
+\end{checkboxes}
+
+
+\question{Which of the following security features does Simultaneous Authentication of Equals (SAE) provide?}
+\begin{checkboxes}
+    \choice Stronger message authentication via MIC instead of CRC.
+    \CorrectChoice Protection against man-in-the-middle attacks.
+    \CorrectChoice Protection against offline dictionary attacks.
+    \CorrectChoice Mutual authentication between devices.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{What is the primary purpose of the "Duration" field in the WiFi protocol header?}
+\begin{checkboxes}
+    \choice To indicate the duration of a data transmission.
+    \CorrectChoice To reserve the wireless medium for a specified period to avoid collisions.
+    \choice To specify the length of time a device can transmit data.
+    \choice To define the time interval during which the channel is busy.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{Which of the following provides a possible classification of a wireless communication system?}
+\begin{checkboxes}
+    \choice High speed networks
+    \CorrectChoice Fixed or mobile
+    \CorrectChoice Infrastructure or Ad Hoc network
+    \CorrectChoice Wireless Wide Area Networks or Wireless Local Area Networks
+    \choice None of the other options.
+\end{checkboxes}
