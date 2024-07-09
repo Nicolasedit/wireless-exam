@@ -34,33 +34,33 @@
 }
 
 \question{Consider a setup in which 2 STA (STA-1 and STA-2) are connected to the same WLAN managed by an AP. A third device (ETH-1) is connected with Ethernet technology. For each setup, describe and justify the expected goodput in the following cases:
-\begin{parts}
-    \part[3] Scenario 1: Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Gigabit Ethernet technology with a physical link capacity of 1000Mb/s
-    \begin{enumerate}
-        \item ETH-1 sends data to STA-1 using UDP
-        \item ETH-1 sends data to STA-1 using TCP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
-    \end{enumerate}
+    \begin{parts}
+        \part[3] Scenario 1: Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Gigabit Ethernet technology with a physical link capacity of 1000Mb/s
+        \begin{enumerate}
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
+        \end{enumerate}
 
-    \part[2] Scenario 2: What changes if STA-1 now connects to the same WLAN but using the 5GHz band? Again, consider the cases
-    \begin{enumerate}
-        \item ETH-1 sends data to STA-1 using UDP
-        \item ETH-1 sends data to STA-1 using TCP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
-    \end{enumerate}
+        \part[2] Scenario 2: What changes if STA-1 now connects to the same WLAN but using the 5GHz band? Again, consider the cases
+        \begin{enumerate}
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
+        \end{enumerate}
 
-    \part[1] Scenario 3: what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade their technology to using 802.11ax (WiFi 6) with maximum data rate of 1.1Gb/s each?
-    \begin{enumerate}
-        \item ETH-1 sends data to STA-1 using UDP
-        \item ETH-1 sends data to STA-1 using TCP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
-        \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
-    \end{enumerate}
-\end{parts}
+        \part[1] Scenario 3: what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade their technology to using 802.11ax (WiFi 6) with maximum data rate of 1.1Gb/s each?
+        \begin{enumerate}
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
+        \end{enumerate}
+    \end{parts}
 
-Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B. Consider the maximum efficiency of WiFi-6 to be 80\% on MTU frames.
+    Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B. Consider the maximum efficiency of WiFi-6 to be 80\% on MTU frames.
 }
 
 \begin{solution}
@@ -70,8 +70,8 @@ Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header 
     Scenario 1:
     Considering:
     \begin{align*}
-    \text{UDP-over-ETH efficiency} &= \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 8_{\text{UDP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.956 \\
-    \text{TCP-over-ETH efficiency} &= \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 20_{\text{TCP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.949
+        \text{UDP-over-ETH efficiency} & = \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 8_{\text{UDP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.956  \\
+        \text{TCP-over-ETH efficiency} & = \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 20_{\text{TCP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.949
     \end{align*}
     Generic 802.11g efficiency: 50\% (TCP), 55\% (UDP). \\
     ETH maximum throughput: 1000 Mbps. \\
@@ -148,21 +148,47 @@ Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header 
     \end{parts}
 }
 
-\question{Describe the 802.11 power management capabilities (4 points) 
+\question{Describe the 802.11 power management capabilities (4 points)
 
-How can an STA tell the AP that it is going to sleep? 
+    \begin{itemize}
+        \item How can an STA tell the AP that it is going to sleep?
+        \item For how long would the AP not be able to transmit frames to a sleeping STA?
+        \item How can the AP tell the STA that it has some buffered frames waiting to be sent?
+    \end{itemize}
 
-For how long would the AP not be able to transmit frames to a sleeping STA? 
 
-How can the AP tell the STA that it has some buffered frames waiting to be sent? 
+    Describe with an example the sequence of frames exchanged over a time between the STA and the AP. You can use a numbered list and state who sends what to who, or which computations a device does with some information:
+    \begin{enumerate}
+        \item STA sends frame XXX to AP
+        \item AP sends frame YYY to broadcast
+        \item STA extracts ZZZ from YYY and computes KKK, YYY, LLL
+        \item ...
+    \end{enumerate}
 
-Describe with an example the sequence of frames exchanged over a time between the STA and the AP. You can use a numbered list and state who sends what to who, or which computations a device does with some information: 
-\begin{enumerate}
-    \item STA sends frame XXX to AP 
-    \item AP sends frame YYY to broadcast 
-    \item STA extracts ZZZ from YYY and computes KKK, YYY, LLL 
-    \item ...
-\end{enumerate}
+    How can an attacker abuse of these mechanisms to mount a DoS attacks? (2 points)}
+\begin{solution}
+    % ZWxlbmFjYXR0ZWxpbm8=, corrected
+    This solution got 5.50/6 points. Comments were "1 ok - missign ACKs, 2 ok".
 
-How can an attacker abuse of these mechanisms to mount a DoS attacks? (2 points)}
+    The 802.11 power management capabilities allow the device to go to sleep in order to save power during transmission. When a STA wants to go to sleep, it sends a dummy packet to the AP with the power management flag set to 1. During the sleep time, if the AP has to transmit some packets to the STA, it will start buffering them. The STA will wake up before receiving the next beacon frame from the AP (which are sent periodically). If the AP has buffered some packets, it will notify the STA of those packets via the TIM field in the beacon. Based on the TIM value, the STA will wake up to receive the buffered packets or will go back to sleep if the AP does not have any frames to send.
+
+    In conclusion, the AP will not be able to send any frames to the STA until the transmission of the next beacon frame. The sequence of frames exchanged is as follows:
+    \begin{enumerate}
+        \item STA sends a null frame with the power management flag set to 1.
+        \item AP sends the periodic beacon with the TIM field set.
+        \item The STA analyzes the TIM value.
+              \begin{itemize}
+                  \item If the AP does not have any packets buffered, the STA goes back to sleep until the next beacon.
+                  \item If the AP has some packets buffered, the STA will wake up.
+              \end{itemize}
+        \item Transmission of buffered frames from AP to STA.
+    \end{enumerate}
+
+    The power management mechanism can be used to mount a DoS attack in different ways:
+    \begin{enumerate}
+        \item The attacker injects some false synchronization frames to cause the STA and the AP to fall out of synchronization. As a result, the STA will not wake up in time for the beacon and will not be able to correctly receive the frames.
+        \item The attacker impersonates the STA and sends a frame with the power management flag set to 1 to the AP. The AP will think that the STA is going to sleep, so it stops transmitting the frames. When the legitimate STA receives the beacon containing the TIM, it will think that it's an error because it is not sleeping, so it will discard it. At this point, the AP is no longer able to send the frames.
+        \item The attacker impersonates the STA and sends a beacon to the AP with the TIM value indicating zero packets to be sent. The STA will think that the legitimate AP has no frames to transmit and will go back to sleep. In reality, if the legitimate AP has buffered some packets, it will not be able to send them.
+    \end{enumerate}
+\end{solution}
 

@@ -114,7 +114,7 @@
     \choice None of the other options.
 \end{checkboxes}
 
-\question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are disabled. Put in the correct order over time the sequence of events that would occur:}
+\question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are \textit{disabled}. Put in the correct order over time the sequence of events that would occur:}
 \begin{solution}
     \begin{enumerate}
         \item A waits for DIFS time
@@ -124,6 +124,23 @@
         \item AP sends ACK(A)
         \item The transmission is completed
     \end{enumerate}
+\end{solution}
+
+\question{Consider the case a STA would like to transmit a frame to the AP. No other transmissions are present. RTS/CTS are \textit{ENABLED}. Put in the correct order over time the sequence of events that would occur:}
+\begin{solution}
+    \begin{enumerate}
+        \item A waits for DIFS time
+        \item A sends RTS
+        \item AP received RTS and wait SIFS time
+        \item AP sends CTS
+        \item A receives CTS and waits SIFS time
+        \item A sends the DATA(A) frame
+        \item AP receives the DATA(A) frame
+        \item AP waits for SIFS time
+        \item AP sends ACK(A)
+        \item the transmission is completed
+    \end{enumerate}
+    "A receives CTS and waits DIFS time" is not a correct step.
 \end{solution}
 
 \question{Why in 802.11 there are two destination mac addresses?}
@@ -240,7 +257,6 @@
 
 \question{How is the value for the "Duration" field typically calculated in WiFi networks?}
 \begin{checkboxes}
-    % source: google doc
     \choice Determined by the physical distance between the devices.
     \choice Defined by the number of wireless devices currently connected to the access point.
     \CorrectChoice Calculated according to the duration of the current transmission plus any additional time needed for acknowledgments.
