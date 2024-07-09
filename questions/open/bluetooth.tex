@@ -1,10 +1,6 @@
 \section{Bluetooth protocol and security}
 
 
-\question{Secure simple pairing + MITM attack}
-
-\question{Differences between BT BR/EDR and BLE (frequencies, FEC/ARQ, …)}
-
 \question{Which are the privacy features offered by Bluetooth? Which attack do they offer protection to? How is the problem solved using the IRK? Describe in detail how the IRK is used to provide resolvable private addresses.}
 \begin{solution}
     % cmljY2FyZG9yb3Npbg==, corrected
@@ -64,6 +60,10 @@
 
     For "Just Works", no specific hardware capabilities are required; initiating the procedure can be done with a button or similar action. For Numeric Comparison, at least one of the devices needs to have a screen to display the comparison, and a method (such as a touch input, button, or keypad) to accept or reject it. For Passkey Entry, both devices need a screen: one to confirm the passkey being entered and the other to enter it via a keyboard, touchscreen, or keypad. For OOB, support for an out-of-band method like NFC is required.
 \end{solution}
+
+\question{Describe the Bluetooth device states (standby, advertiser, scanner, initiator, master, slave). (3 points)
+
+Provide an example considering two devices that would like to interconnect. (3 points)}
 
 
 \question{Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario. (2 points). Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (4 points)}

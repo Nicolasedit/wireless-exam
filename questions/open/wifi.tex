@@ -22,8 +22,7 @@
             \item STA-1 sends data to STA-2 using TCP
         \end{enumerate}
 
-        \part Scenario 3 (1 point): what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade
-        their technology to using 802.11ax (WiFi 6)?
+        \part Scenario 3 (1 point): what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade their technology to using 802.11ax (WiFi 6)?
         \begin{enumerate}
             \item STA-1 sends data to ETH-1 using UDP
             \item STA-1 sends data to ETH-1 using TCP
@@ -107,3 +106,22 @@ Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header 
         \end{enumerate}
     \end{parts}
 }
+
+\question{Describe the 802.11 power management capabilities (4 points) 
+
+How can an STA tell the AP that it is going to sleep? 
+
+For how long would the AP not be able to transmit frames to a sleeping STA? 
+
+How can the AP tell the STA that it has some buffered frames waiting to be sent? 
+
+Describe with an example the sequence of frames exchanged over a time between the STA and the AP. You can use a numbered list and state who sends what to who, or which computations a device does with some information: 
+\begin{enumerate}
+    \item STA sends frame XXX to AP 
+    \item AP sends frame YYY to broadcast 
+    \item STA extracts ZZZ from YYY and computes KKK, YYY, LLL 
+    \item ...
+\end{enumerate}
+
+How can an attacker abuse of these mechanisms to mount a DoS attacks? (2 points)}
+

@@ -2,8 +2,8 @@
 
 \question{In a GNSS, satellites broadcast crucial information to the users:}
 \begin{parts}
-    \part Identify the crucial pieces of information that satellites broadcast to users. List the essential data elements transmitted by GNSS satellites to receivers.
-    \part Explain how these pieces of information are utilized by a receiver. Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
+    \part[2] Identify the crucial pieces of information that satellites broadcast to users. List the essential data elements transmitted by GNSS satellites to receivers.
+    \part[4] Explain how these pieces of information are utilized by a receiver. Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
 \end{parts}
 
 \question{
@@ -18,7 +18,11 @@
     \end{parts}
 }
 
-\question{Describe meaconing compare work other type of GNSS ATTACKS.}
+\question{Based on the explanations provided in class and your laboratory experiences, please address the following:}
+\begin{parts}
+    \part[3] Describe a meaconing attack on a GNSS receiver. Define what a meaconing attack is. Explain how it is conducted. Mention any distinguishing characteristics of a meaconing attack compared to other types of GNSS interference.
+    \part[3] Discuss the effects of a meaconing attack on a GNSS receiver. Describe the impact on the receiver's position, velocity, and time (PVT) calculations. Highlight any possible indicators that a meaconing attack is occurring.
+\end{parts}
 
 \question{Interference detection methods can vary in their approaches within GNSS receivers:}
 \begin{parts}
@@ -47,6 +51,25 @@
     Machine Learning Models: Other methods involve feeding receiver data into machine learning models that can be trained on normal (interference-free) scenarios. These models can later be used for detection. This method is generally precise (depending on the model used and the amount of training data) but will require more power and area for inference.
 \end{solution}
 
+\question{Describe interference detection and mitigation approaches based on transformed domains adopted in GNSS receivers. (6 points)}
+\begin{parts}
+    \part[3] Explain the general interference detection and mitigation approach based on transformed domains used in GNSS receivers. 
+    \begin{itemize}
+        \item Discuss how transformed domains (e.g., frequency, time-frequency) are utilized to detect and mitigate interference.
+        \item Provide examples of specific techniques or algorithms used in transformed domains for interference detection and mitigation
+    \end{itemize}
+    \part[1.5] List and describe a frequency domain mitigation technique. 
+    \begin{itemize}
+        \item Identify a specific technique used in the frequency domain for mitigating interference in GNSS receivers.
+        \item Describe how this technique operates to suppress or filter out interference signals effectively.
+    \end{itemize}
+    \part[1.5] List and describe a time domain mitigation technique. 
+    \begin{itemize}
+        \item Identify a specific technique used in the time domain for mitigating interference in GNSS receivers.
+        \item Explain how this technique analyzes temporal characteristics of signals to detect and mitigate interference.
+    \end{itemize}
+\end{parts}
+
 \question{Explain in general detection and mitigation techniques for interference signals in both domain. Explain in detail mitigation technique in frequency domain and in time domain.}
 
 \question{Describe the mitigation techniques (at least 3) of GNSS spoofing and the relative levels in which they act.}
@@ -64,6 +87,12 @@
 \end{itemize}
 
 \question{What are the effects of a spoofing attack on a GNSS receiver? (2 pts) How can a receiver fail or fail to respond to a spoofing attack? (2 pts) Possible disruptions of the attack? (2 pts)}
+
+\question{What are the effects of a spoofing attack on a GNSS receiver? Motivate your answer. (6 points)}
+\begin{parts}
+    \part[3] Describe the primary effects of a spoofing attack on a GNSS receiver's operation. Explain how spoofing can alter the receiver's position, velocity, and time (PVT) calculations. Discuss potential disruptions in navigation and timing accuracy.
+    \part[3] Provide a detailed explanation to support your answer. Discuss how the GNSS receiver might respond or fail to respond to spoofed signals. Explain why these effects occur, considering the technical aspects of GNSS signal processing.
+\end{parts}
 
 \question{In a GNSS, satellites broadcast crucial information to the users:}
 \begin{parts}
