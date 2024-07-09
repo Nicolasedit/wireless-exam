@@ -6,6 +6,15 @@
 \question{Differences between BT BR/EDR and BLE (frequencies, FEC/ARQ, …)}
 
 \question{Which are the privacy features offered by Bluetooth? Which attack do they offer protection to? How is the problem solved using the IRK? Describe in detail how the IRK is used to provide resolvable private addresses.}
+\begin{solution}
+    % Z2lvcmdpbw==, corrected
+    This solution got 6/6 points.
+    
+    Bluetooth tecnology is likelly used for comunication between personal devices, like headphones or smartwatches. Device that presence indicate also the presece of the owner. In BT technology, devices sends perioically informations and beacons, so an attacker can sniff the MAC address and with it can violate the privacy of the user. For this scope, is being added a private resolvable address. Such address is computed form a random value with a key. Verifying the key is equally to verify the user.
+    There are different types of address: public, private, random, resolvable; each identifyed by 2 starting bits. The resolvable one, is divided in 3 parts: 2 bits that identyfies the type of the adress, 22 bits wich functions is a message authentication code, 24 bits nonce; for a total of 48 bits like MAC BT address.
+    The creation starts from sharing te IRK (Identity Resolver Key) from the two devices. Every following comunications can than use resolvable addresses. To create it, the device station generates 24 bits random value. Than it calculate a hash of 'random | IRK' for a total of 22 bits. The reciever can verify the identiy by recomputing the hash and verify the 22 bits.
+\end{solution}
+
 
 \question{What are the 4 association modes in Bluetooth and what capabilities a device must have to support them (in general)? Why are they used? For every association mode, tell which capabilities a device must have to support them (for Numerical comparison the devices must have these capabilities and so on and so forth)}
 

@@ -76,6 +76,15 @@
         \item Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
     \end{itemize}
 \end{parts}
+\begin{solution}
+    % Z2lvcmdpbw==, corrected
+    This solution got 5.5/6 points. Good intuitive explanation but how PVT works is not explained in detail (linearizatin , LS , equations)
+
+    The GNNS system is a broadcast one-way wireless system. It means that the sattelites sends continous signals to the earth without recievng back from the users. Satellites sends 2 important informations: it's positions and the time of the message's departure.
+    The goal of the reciever is to compute its positions on the globe. This means that the device aim to know its x y z chordinates. Being a system, to knwo these 3 variables, in theory only 3 satellites' messages are required. The idea behind the formula is that is satellites allow the user to compute a sphere with the satellite as orign (where the radius is obtained as the different timing betwenn the start (in the message) and the reciving (the station time)). With 3 spheres, they intersects in only 1 point wich is the user position. In theory it works this way. But wee need to consider errors in the timing: even a little variationsn can lead to errors in the computations. The satellites have really precise atomic clocks (that can be resicronised from base stations) and we can say that they does not hafve a bias. Such hypotesys is not valid for the user equipment. In order to calculate the correst position, we need to take this measure in consideration. This quantity can be descripeb as a statistic quantity, so we can add this o the unkows: x,y,z,dt. Now it's required 4 satellites to compute the correct position.
+    It's possibile to compute the position with more than 4 satellites using the least stuare solution.
+
+\end{solution}
 
 \question{Describe the effect of pseudorange errors on the Position, Velocity, and Time (PVT) solution and explain the role of the Dilution of Precision factor (e.g., GDOP, HDOP).}
 \begin{parts}
