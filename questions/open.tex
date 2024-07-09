@@ -16,15 +16,15 @@
     \end{parts}
 
     \question{
-    \begin{parts}
-        \part[4] What are the main differences between a spoofing and a jamming attack on a GNSS receiver?
-        \begin{subparts}
-            \subpart[2] Define what constitutes a spoofing attack and a jamming attack.
-            \subpart[2] Compare and contrast the mechanisms by which each attack operates. Discuss how each type of attack impacts the GNSS signals. Highlight the differences in the effects on the receiver's position, velocity, and time (PVT) calculations.
-        \end{subparts}
-        \part[1] Which type of attack is more harmful to GNSS operations?
-        \part[1] Explain your reasoning for which attack is more harmful.
-    \end{parts}
+        \begin{parts}
+            \part[4] What are the main differences between a spoofing and a jamming attack on a GNSS receiver?
+            \begin{subparts}
+                \subpart[2] Define what constitutes a spoofing attack and a jamming attack.
+                \subpart[2] Compare and contrast the mechanisms by which each attack operates. Discuss how each type of attack impacts the GNSS signals. Highlight the differences in the effects on the receiver's position, velocity, and time (PVT) calculations.
+            \end{subparts}
+            \part[1] Which type of attack is more harmful to GNSS operations?
+            \part[1] Explain your reasoning for which attack is more harmful.
+        \end{parts}
     }
 
     \question{Describe meaconing compare work other type of GNSS ATTACKS.}
@@ -41,6 +41,20 @@
             \item Discuss the advantages or limitations of each method (e.g., in terms of effectiveness and implementation complexity).
         \end{itemize}
     \end{parts}
+    \begin{solution}
+        % Z2lvcmdpbw==, corrected
+        This solution got 6/6 points.
+
+        For interference detection, we can use the following methods:
+
+        AGC Dynamics Observations: This method uses the automatic gain control (AGC) adaptation employed by the receiver. By observing the AGC's variation over time, we can identify high-power interferences over the GNSS band, which can be used to detect attacks like spoofing. When high-power interference signals are processed by the receiver, the AGC lowers the input gain on the RX chain, causing a sudden shift in the AGC graph. These sudden variations can be used to detect interference. The advantage of this method is that it can also be used for spoofing detection and only requires the enablement of AGC measurement for the RX chain.
+
+        SNR Measurements: High variations in the Signal-to-Noise Ratio (SNR) can be used to detect interference signals that affect the overall signal quality and are directly measured by the receiver. High spectral noise will degrade signal performance, causing a change in the SNR. This method is moderately accurate and fast.
+
+        Abnormal Waveform Distribution in the Frequency Domain: Abnormal waveform distributions in the frequency domain can be used to detect interference. These distributions can be compared with the "normal" ones in standard operating conditions, providing a statistical model that can be used for detection. This method may require extra hardware or software, which could be a problem in low-power devices where area and power are constrained.
+
+        Machine Learning Models: Other methods involve feeding receiver data into machine learning models that can be trained on normal (interference-free) scenarios. These models can later be used for detection. This method is generally precise (depending on the model used and the amount of training data) but will require more power and area for inference.
+    \end{solution}
 
     \question{Explain in general detection and mitigation techniques for interference signals in both domain. Explain in detail mitigation technique in frequency domain and in time domain.}
 
@@ -91,35 +105,65 @@
     \question{Power saving mode in 802.11 + attack}
 
     \question{Consider a setup in which 2 STA (STA-1 and STA-2) are connected to the same WLAN managed by an AP. A third device (ETH-1) is connected with Ethernet technology. For each setup, describe and justify the expected goodput in the following cases:
+        \begin{parts}
+            \part Scenario 1 (3 points): Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Fast Ethernet
+            technology with a physical link capacity of 100Mb/s
+            \begin{enumerate}
+                \item STA-1 sends data to ETH-1 using UDP
+                \item STA-1 sends data to ETH-1 using TCP
+                \item STA-1 sends data to STA-2 using UDP
+                \item STA-1 sends data to STA-2 using TCP
+            \end{enumerate}
+
+            \part Scenario 2 (2 points): What changes if STA-1 now connects to the same WLAN but using the 5GHz band?
+            Again, consider the cases
+            \begin{enumerate}
+                \item STA-1 sends data to ETH-1 using UDP
+                \item STA-1 sends data to ETH-1 using TCP
+                \item STA-1 sends data to STA-2 using UDP
+                \item STA-1 sends data to STA-2 using TCP
+            \end{enumerate}
+
+            \part Scenario 3 (1 point): what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade
+            their technology to using 802.11ax (WiFi 6)?
+            \begin{enumerate}
+                \item STA-1 sends data to ETH-1 using UDP
+                \item STA-1 sends data to ETH-1 using TCP
+                \item STA-1 sends data to STA-2 using UDP
+                \item STA-1 sends data to STA-2 using TCP
+            \end{enumerate}
+        \end{parts}
+        Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B.
+    }
+
+    \question{Consider a setup in which 2 STA (STA-1 and STA-2) are connected to the same WLAN managed by an AP. A third device (ETH-1) is connected with Ethernet technology. For each setup, describe and justify the expected goodput in the following cases:
     \begin{parts}
-        \part Scenario 1 (3 points): Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Fast Ethernet
-        technology with a physical link capacity of 100Mb/s
+        \part[3] Scenario 1: Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Gigabit Ethernet technology with a physical link capacity of 1000Mb/s
         \begin{enumerate}
-            \item STA-1 sends data to ETH-1 using UDP
-            \item STA-1 sends data to ETH-1 using TCP
-            \item STA-1 sends data to STA-2 using UDP
-            \item STA-1 sends data to STA-2 using TCP
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
         \end{enumerate}
 
-        \part Scenario 2 (2 points): What changes if STA-1 now connects to the same WLAN but using the 5GHz band?
-        Again, consider the cases
+        \part[2] Scenario 2: What changes if STA-1 now connects to the same WLAN but using the 5GHz band? Again, consider the cases
         \begin{enumerate}
-            \item STA-1 sends data to ETH-1 using UDP
-            \item STA-1 sends data to ETH-1 using TCP
-            \item STA-1 sends data to STA-2 using UDP
-            \item STA-1 sends data to STA-2 using TCP
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
         \end{enumerate}
 
-        \part Scenario 3 (1 point): what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade
-        their technology to using 802.11ax (WiFi 6)?
+        \part[1] Scenario 3: what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade their technology to using 802.11ax (WiFi 6) with maximum data rate of 1.1Gb/s each?
         \begin{enumerate}
-            \item STA-1 sends data to ETH-1 using UDP
-            \item STA-1 sends data to ETH-1 using TCP
-            \item STA-1 sends data to STA-2 using UDP
-            \item STA-1 sends data to STA-2 using TCP
+            \item ETH-1 sends data to STA-1 using UDP
+            \item ETH-1 sends data to STA-1 using TCP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using UDP
+            \item ETH-1 sends data to STA-1 and STA-2 at the same time using TCP
         \end{enumerate}
     \end{parts}
-    Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B.
+
+    Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B. Consider the maximum efficiency of WiFi-6 to be 80\% on MTU frames.
     }
 
     \question{Describe the frames exchanged by an STA and an AP to inform the STA about the SSID of the AP; what kind of attack exploits this mechanism?}
@@ -127,46 +171,46 @@
     \question{Describe step For OPEN AUTH system when the AP communicates ESSID and when not}
 
     \question{Describe the sequence of messages that an STA and an AP exchange during association and authentication processes in an open system in the following cases:
-    \begin{parts}
-        \part Case 1 - AP broadcasts beacon messages (2 points)
-        \begin{enumerate}
-            \item STA does XXX
-            \item AP responds with YYY
-            \item STA processes ZZZ
-            \item Attack types: ABC
-        \end{enumerate}
+        \begin{parts}
+            \part Case 1 - AP broadcasts beacon messages (2 points)
+            \begin{enumerate}
+                \item STA does XXX
+                \item AP responds with YYY
+                \item STA processes ZZZ
+                \item Attack types: ABC
+            \end{enumerate}
 
-        \part Case 2 - ESSID is hidden, AP does not broadcast WLAN EISS in beacons (2 points)
-        \begin{enumerate}
-            \item STA does XXX
-            \item AP responds with YYY
-            \item STA processes ZZZ
-            \item Attack types: ABC
-        \end{enumerate}
-    \end{parts}
+            \part Case 2 - ESSID is hidden, AP does not broadcast WLAN EISS in beacons (2 points)
+            \begin{enumerate}
+                \item STA does XXX
+                \item AP responds with YYY
+                \item STA processes ZZZ
+                \item Attack types: ABC
+            \end{enumerate}
+        \end{parts}
     }
 
     \question{Describe and sketch the sequences of messages an STA and an AP exchange during the initial Association and Authentication process in an Open System. Consider both the case in which
-    \begin{parts}
-        \part Case 1 - The AP broadcasts the beacon messages (2 points)
-        \begin{enumerate}
-            \item STA sends frame XXX to AP
-            \item AP broadcasts frame YYY
-            \item STA extracts ZZZ from YYY and computes KKK
-            \item Attack types: ABC
-        \end{enumerate}
+        \begin{parts}
+            \part Case 1 - The AP broadcasts the beacon messages (2 points)
+            \begin{enumerate}
+                \item STA sends frame XXX to AP
+                \item AP broadcasts frame YYY
+                \item STA extracts ZZZ from YYY and computes KKK
+                \item Attack types: ABC
+            \end{enumerate}
 
-        \part Case 2 - The ESSID is hidden and the AP does not broadcast the WLAN ESSIS in the beacons (2 points)
-        \begin{enumerate}
-            \item STA sends frame XXX to AP
-            \item AP broadcasts frame YYY
-            \item STA extracts ZZZ from YYY and computes KKK
-            \item Attack types: ABC
-        \end{enumerate}
-    \end{parts}
+            \part Case 2 - The ESSID is hidden and the AP does not broadcast the WLAN ESSIS in the beacons (2 points)
+            \begin{enumerate}
+                \item STA sends frame XXX to AP
+                \item AP broadcasts frame YYY
+                \item STA extracts ZZZ from YYY and computes KKK
+                \item Attack types: ABC
+            \end{enumerate}
+        \end{parts}
     }
 
-    
+
     \section{WPAN - Bluetooth}
 
     \question{Secure simple pairing + MITM attack}
@@ -184,6 +228,7 @@
     \question{Explain the main design goals for the BT technology and the technical constraints that guided the design (2 pts). Describe BT network topologies and the role of nodes in each scenario (2 pts). Describe the physical layer communication mechanisms implemented in BT BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (2 pts)}
 
     \begin{solution}
+        % Z2lvcmdpbw==, corrected
         This solution got 6/6 points; it's missing "how does routing work in piconets" but I didn't find it in the slides.
 
         The main goal for Bluetooth technology was to create a wireless cable rather than a wireless network. It is designed to be ubiquitous, inexpensive, and close range ($<10m$).
@@ -200,20 +245,42 @@
     \end{solution}
 
 
-    \question{Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points) What is the goal of implementing such association models? (1 point) What are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)}
+    \question{Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)
+
+        What is the goal of implementing such association models? (1 point)
+
+        What are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)}
+    \begin{solution}
+        % Z2lvcmdpbw==, corrected
+        This solution got 5.50/6 points.
+
+        In Bluetooth, the four association models are based on different key agreement protocols, which are then used to encrypt the connection between devices. During the pairing process, hardware capabilities are exchanged during the feature exchange to determine the most secure association method supported by both devices.
+
+        The four association models are:
+
+        Just Works, No Input/Output (No action required)
+        Numeric Comparison
+        Passkey Entry
+        Out of Band (OOB), typically using NFC (Near Field Communication)
+
+        The goal of implementing these association models is to offer different modes that can be used based on the hardware capabilities of diverse Bluetooth devices.
+
+        For "Just Works", no specific hardware capabilities are required; initiating the procedure can be done with a button or similar action. For Numeric Comparison, at least one of the devices needs to have a screen to display the comparison, and a method (such as a touch input, button, or keypad) to accept or reject it. For Passkey Entry, both devices need a screen: one to confirm the passkey being entered and the other to enter it via a keyboard, touchscreen, or keypad. For OOB, support for an out-of-band method like NFC is required.
+    \end{solution}
+
 
     \question{Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario. (2 points). Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (4 points)}
 
     \question{Describe the Bluetooth Secure Simple Pairing, showing the sequence of messages the two devices exchange
-    to complete the pairing. (4 points).
+        to complete the pairing. (4 points).
 
-    Describe a possible Man In The Middle attack to such a scheme. (2 points)
-    You can use a numbered list and state who sends what to who, or which computations a device does with
-    some information:
-    1. A frame XXX to B
-    2. B sends frame YYY to broadcast
-    3. A extracts ZZZ from YYY and computes KKK, YYY, LLL
-    4. ...}
+        Describe a possible Man In The Middle attack to such a scheme. (2 points)
+        You can use a numbered list and state who sends what to who, or which computations a device does with
+        some information:
+        1. A frame XXX to B
+        2. B sends frame YYY to broadcast
+        3. A extracts ZZZ from YYY and computes KKK, YYY, LLL
+        4. ...}
 
     \section{WWAN - mobile}
 

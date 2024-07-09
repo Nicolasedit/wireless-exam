@@ -98,6 +98,14 @@
         \choice None of the other options.
     \end{checkboxes}
 
+    \question{In a digital modulation scheme transmitting  $M$ different symbols, what could be a wise strategy to map each sequence of $\log_2 M$ bits to each symbol?}
+    \begin{checkboxes}
+        \choice It does not matter. As long as each symbol carries the same number of bits, their mapping has no impact on the performance.
+        \choice Maximizing the number of bits that differ between symbols that are more likely to be mistaken is a good strategy to minimize the bit error rate.
+        \CorrectChoice Minimizing the number of bits that differ between symbols that are more likely to be mistaken is a good strategy to minimize the bit error rate.
+        \choice The bit sequence with the largest number of '1's should be assigned to the symbol with the highest energy, and so on, until the sequence with all zeros is assigned to the symbol with the lowest energy.
+        \choice None of the other options.
+    \end{checkboxes}
 
     \section{GNSS}
 
@@ -192,6 +200,15 @@
         \CorrectChoice Jamming disrupts signals by transmitting noise, while spoofing sends counterfeit signals.
     \end{checkboxes}
 
+    \question{Which technique can help detect GNSS jamming?}
+    \begin{checkboxes}
+        \CorrectChoice Cross-checking GNSS signals with other GNSS constellations.
+        \CorrectChoice Using a directional antenna to identify the source of the signal.
+        \CorrectChoice Comparing GNSS data with inertial navigation systems (INS).
+        \choice Enhancing signal strength through amplification.
+        \choice None of the other options.
+    \end{checkboxes}
+
     \question{In a GNSS, what crucial pieces of information are the satellites broadcasting to the users?}
     \begin{checkboxes}
         \choice The position of the user
@@ -205,13 +222,30 @@
 
     \section{WLAN / wifi}
 
+    \question{Which of the following topologies are possible in a Wireless LAN?}
+    \begin{checkboxes}
+        \choice Point-to-point mode
+        \choice High speed mode
+        \CorrectChoice Infrastructure-based mode
+        \CorrectChoice Ad-hoc mode
+        \choice None of the other options
+
+    \end{checkboxes}
+
     \question{Two devices connected in Wi-Fi without RTS/CTS assumed to collide, order what happened (and there where a series of steps like A sends, B, sends, DATA(A) collide with DATA(B) etc,)}
 
     \question{Sort the exchanged messages to connect to an AP}
 
     \question{Algorithm used in OWE}
 
-    \question{How WEP key management ic compared to WPA/WPA2}
+    \question{How does WEP key management compare to WPA/WPA2 key management?}
+    \begin{checkboxes}
+        \choice WEP is more efficient and faster than WPA/WPA2 in managing keys.
+        \choice WEP uses dynamic keys that change frequently, unlike WPA/WPA2.
+        \CorrectChoice WEP is considered insecure due to its use of static keys, whereas WPA/WPA2 use more secure key management protocols.
+        \choice WEP provides stronger encryption and is more secure than WPA/WPA2.
+        \choice None of the other options.
+    \end{checkboxes}
 
     \question{why not csma/ cd in wifi}
 
@@ -226,6 +260,15 @@
     \question{Which wifi protocols are considered secure? (wpa with tkip, wpa2, wep, wpa3 )}
 
     \question{Definition of authenticator supplicant port server authentication}
+
+    \question{What is the primary purpose of rate adaptation in WiFi networks?}
+    \begin{checkboxes}
+        \choice To adjust the transmission power of devices based on network conditions.
+        \choice To select the optimal data rate for transmitting data over the wireless channel based on the AP transmitter power.
+        \choice To select the optimal data rate for transmitting data over the wireless channel based on the distance from the AP.
+        \choice To adjust the transmission power of devices dynamically.
+        \CorrectChoice None of the others.
+    \end{checkboxes}
 
     \question{Consider the maximum goodput one could reach with the following technologies. Put the following options in order from the HIGHEST to the LOWEST:}
     \begin{solution}
@@ -489,6 +532,15 @@
         \end{enumerate}
     \end{solution}
 
+    \question{What is bonding in Bluetooth technology?}
+    \begin{checkboxes}
+        \choice A mechanism for optimizing Bluetooth connection range.
+        \choice A method for encrypting data packets during Bluetooth transmission.
+        \CorrectChoice A process of permanently storing Bluetooth device information after successful pairing.
+        \choice A protocol for managing multiple simultaneous Bluetooth connections.
+        \choice None of the other options.
+    \end{checkboxes}
+
     \section{WWAN / mobile}
 
     \question{What is Stingray vulnerability?}
@@ -527,14 +579,7 @@
 
     \question{GSM Authentication}
 
-    \question{What is the primary purpose of rate adaptation in WiFi networks?}
-    \begin{checkboxes}
-        \choice To adjust the transmission power of devices based on network conditions.
-        \choice To select the optimal data rate for transmitting data over the wireless channel based on the AP transmitter power.
-        \choice To select the optimal data rate for transmitting data over the wireless channel based on the distance from the AP.
-        \choice To adjust the transmission power of devices dynamically.
-        \CorrectChoice None of the others.
-    \end{checkboxes}
+
 
     \question{What is the primary purpose of handover in mobile networks?}
     \begin{checkboxes}
