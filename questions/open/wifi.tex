@@ -147,6 +147,29 @@
         \end{enumerate}
     \end{parts}
 }
+\begin{solution}
+    % dmluY2Vuem9jb3N0YW5v, 
+    This solution got 5.50/6. Comment: "\textit{ "3) STA sends an authentication request, but since Open System is implemented, no authentication is required." this is incorrect. THe AP will send a authentication reply in any case. 1 ok - except the above. 2 ok. 3 ok}" 
+    Case 1:
+    \begin{enumerate}
+        \item The AP sends the beacon frame in broadcast to inform all the STAs that there's an AP with the name expressed in the frame.
+        \item The STA interested in connecting to that AP replies with a probe request.
+        \item The AP replies with a probe reply.
+        \item STA sends an authentication request, but since Open System is implemented, no authentication is required.
+        \item STA sends an association request to the AP.
+        \item AP replies with an association reply.
+    \end{enumerate}
+
+    Case 2:
+    \begin{enumerate}
+        \item STA can send a probe request in broadcast to discover which APs are present in the network.
+        \item Only the APs that accept broadcast requests send a probe reply, indicating the corresponding ESSID.
+        \item All the points from 3 to 5 are the same as in Case 1.
+    \end{enumerate}
+
+    These mechanisms allow two types of attacks. Exploiting the authentication and association vulnerabilities (lack of sender authentication), the attacker can send, on behalf of the AP, a broadcast (or directly to a STA) disassociation or deauthentication frame. This implies that all the STAs connected to that AP will perform the association or authentication mechanism again. The most effective one (from the attacker's point of view) is the deauthentication attack since it forces the STAs to perform both association and authentication procedures again, requiring more time before the STAs reconnect to the AP.
+
+\end{solution}
 
 \question{Describe the 802.11 power management capabilities (4 points)
 
