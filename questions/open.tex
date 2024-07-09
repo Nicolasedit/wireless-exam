@@ -15,7 +15,17 @@
         \part Explain how these pieces of information are utilized by a receiver. Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
     \end{parts}
 
-    \question{Difference between Jamming and spoofing in GNSS, how they influence the PVT, what is more harmful and why?}
+    \question{
+    \begin{parts}
+        \part[4] What are the main differences between a spoofing and a jamming attack on a GNSS receiver?
+        \begin{subparts}
+            \subpart[2] Define what constitutes a spoofing attack and a jamming attack.
+            \subpart[2] Compare and contrast the mechanisms by which each attack operates. Discuss how each type of attack impacts the GNSS signals. Highlight the differences in the effects on the receiver's position, velocity, and time (PVT) calculations.
+        \end{subparts}
+        \part[1] Which type of attack is more harmful to GNSS operations?
+        \part[1] Explain your reasoning for which attack is more harmful.
+    \end{parts}
+    }
 
     \question{Describe meaconing compare work other type of GNSS ATTACKS.}
 
@@ -80,9 +90,10 @@
 
     \question{Power saving mode in 802.11 + attack}
 
-    \question Consider a setup in which 2 STA (STA-1 and STA-2) are connected to the same WLAN managed by an AP. A third device (ETH-1) is connected with Ethernet technology. For each setup, describe and justify the expected goodput in the following cases:
+    \question{Consider a setup in which 2 STA (STA-1 and STA-2) are connected to the same WLAN managed by an AP. A third device (ETH-1) is connected with Ethernet technology. For each setup, describe and justify the expected goodput in the following cases:
     \begin{parts}
-        \part Scenario 1 (3 points)
+        \part Scenario 1 (3 points): Both STA-1 and STA-2 use 802.11g on the ISM band. ETH-1 uses Fast Ethernet
+        technology with a physical link capacity of 100Mb/s
         \begin{enumerate}
             \item STA-1 sends data to ETH-1 using UDP
             \item STA-1 sends data to ETH-1 using TCP
@@ -90,7 +101,8 @@
             \item STA-1 sends data to STA-2 using TCP
         \end{enumerate}
 
-        \part Scenario 2 (2 points)
+        \part Scenario 2 (2 points): What changes if STA-1 now connects to the same WLAN but using the 5GHz band?
+        Again, consider the cases
         \begin{enumerate}
             \item STA-1 sends data to ETH-1 using UDP
             \item STA-1 sends data to ETH-1 using TCP
@@ -98,7 +110,8 @@
             \item STA-1 sends data to STA-2 using TCP
         \end{enumerate}
 
-        \part Scenario 3 (1 point)
+        \part Scenario 3 (1 point): what changes if now both STA-1 (on 5GHz band) and STA-2 (on 2.4GHz band) upgrade
+        their technology to using 802.11ax (WiFi 6)?
         \begin{enumerate}
             \item STA-1 sends data to ETH-1 using UDP
             \item STA-1 sends data to ETH-1 using TCP
@@ -106,12 +119,14 @@
             \item STA-1 sends data to STA-2 using TCP
         \end{enumerate}
     \end{parts}
+    Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B.
+    }
 
     \question{Describe the frames exchanged by an STA and an AP to inform the STA about the SSID of the AP; what kind of attack exploits this mechanism?}
 
     \question{Describe step For OPEN AUTH system when the AP communicates ESSID and when not}
 
-    \question{Describe the sequence of messages that an STA and an AP exchange during association and authentication processes in an open system in the following cases:}
+    \question{Describe the sequence of messages that an STA and an AP exchange during association and authentication processes in an open system in the following cases:
     \begin{parts}
         \part Case 1 - AP broadcasts beacon messages (2 points)
         \begin{enumerate}
@@ -129,8 +144,9 @@
             \item Attack types: ABC
         \end{enumerate}
     \end{parts}
+    }
 
-    \question{Describe and sketch the sequences of messages an STA and an AP exchange during the initial Association and Authentication process in an Open System. Consider both the case in which}
+    \question{Describe and sketch the sequences of messages an STA and an AP exchange during the initial Association and Authentication process in an Open System. Consider both the case in which
     \begin{parts}
         \part Case 1 - The AP broadcasts the beacon messages (2 points)
         \begin{enumerate}
@@ -148,7 +164,9 @@
             \item Attack types: ABC
         \end{enumerate}
     \end{parts}
+    }
 
+    
     \section{WPAN - Bluetooth}
 
     \question{Secure simple pairing + MITM attack}
@@ -188,7 +206,7 @@
 
     \question{Describe the Bluetooth Secure Simple Pairing, showing the sequence of messages the two devices exchange
     to complete the pairing. (4 points).
-    
+
     Describe a possible Man In The Middle attack to such a scheme. (2 points)
     You can use a numbered list and state who sends what to who, or which computations a device does with
     some information:
