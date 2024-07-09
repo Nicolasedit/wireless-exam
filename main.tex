@@ -21,10 +21,16 @@
 \maketitle
 \tableofcontents
 
-% Typeset exams with solutions in LaTeX
-\printanswers % Disable this line to hide answers
-\include{questions/quiz}
+% Include the questions without answers
+\part{Questions with answers}
+\printanswers
+\input{questions/quiz}
+\input{questions/open}
 
-\include{questions/open}
+% Include the questions with answers
+\part{Questions without answers}
+\noprintanswers
+\input{questions/quiz}
+\input{questions/open}
 
 \end{document}
