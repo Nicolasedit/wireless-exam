@@ -1,0 +1,92 @@
+\section{GNSS}
+
+\question{In a GNSS, satellites broadcast crucial information to the users:}
+\begin{parts}
+    \part Identify the crucial pieces of information that satellites broadcast to users. List the essential data elements transmitted by GNSS satellites to receivers.
+    \part Explain how these pieces of information are utilized by a receiver. Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
+\end{parts}
+
+\question{
+    \begin{parts}
+        \part[4] What are the main differences between a spoofing and a jamming attack on a GNSS receiver?
+        \begin{subparts}
+            \subpart[2] Define what constitutes a spoofing attack and a jamming attack.
+            \subpart[2] Compare and contrast the mechanisms by which each attack operates. Discuss how each type of attack impacts the GNSS signals. Highlight the differences in the effects on the receiver's position, velocity, and time (PVT) calculations.
+        \end{subparts}
+        \part[1] Which type of attack is more harmful to GNSS operations?
+        \part[1] Explain your reasoning for which attack is more harmful.
+    \end{parts}
+}
+
+\question{Describe meaconing compare work other type of GNSS ATTACKS.}
+
+\question{Interference detection methods can vary in their approaches within GNSS receivers:}
+\begin{parts}
+    \part List some interference detection methods used in GNSS receivers. (2 points)
+    \begin{itemize}
+        \item Identify at least two different methods used for interference detection.
+    \end{itemize}
+    \part Briefly describe each interference detection method. (4 points)
+    \begin{itemize}
+        \item Provide a concise explanation of how each method detects interference within GNSS receivers.
+        \item Discuss the advantages or limitations of each method (e.g., in terms of effectiveness and implementation complexity).
+    \end{itemize}
+\end{parts}
+\begin{solution}
+    % Z2lvcmdpbw==, corrected
+    This solution got 6/6 points.
+
+    For interference detection, we can use the following methods:
+
+    AGC Dynamics Observations: This method uses the automatic gain control (AGC) adaptation employed by the receiver. By observing the AGC's variation over time, we can identify high-power interferences over the GNSS band, which can be used to detect attacks like spoofing. When high-power interference signals are processed by the receiver, the AGC lowers the input gain on the RX chain, causing a sudden shift in the AGC graph. These sudden variations can be used to detect interference. The advantage of this method is that it can also be used for spoofing detection and only requires the enablement of AGC measurement for the RX chain.
+
+    SNR Measurements: High variations in the Signal-to-Noise Ratio (SNR) can be used to detect interference signals that affect the overall signal quality and are directly measured by the receiver. High spectral noise will degrade signal performance, causing a change in the SNR. This method is moderately accurate and fast.
+
+    Abnormal Waveform Distribution in the Frequency Domain: Abnormal waveform distributions in the frequency domain can be used to detect interference. These distributions can be compared with the "normal" ones in standard operating conditions, providing a statistical model that can be used for detection. This method may require extra hardware or software, which could be a problem in low-power devices where area and power are constrained.
+
+    Machine Learning Models: Other methods involve feeding receiver data into machine learning models that can be trained on normal (interference-free) scenarios. These models can later be used for detection. This method is generally precise (depending on the model used and the amount of training data) but will require more power and area for inference.
+\end{solution}
+
+\question{Explain in general detection and mitigation techniques for interference signals in both domain. Explain in detail mitigation technique in frequency domain and in time domain.}
+
+\question{Describe the mitigation techniques (at least 3) of GNSS spoofing and the relative levels in which they act.}
+
+\question{List and describe some possible spoofing countermeasures for satellite navigation systems. (3 points)}
+\begin{itemize}
+    \item Identify at least three spoofing countermeasures.
+    \item Briefly describe how each countermeasure works.
+    \item Explain the effectiveness of each countermeasure in mitigating spoofing attacks.
+    \item Specify the levels of a satellite navigation system at which these countermeasures can be implemented. (3 points)
+          \begin{itemize}
+              \item Identify the different levels within a satellite navigation system.
+              \item For each of the countermeasures mentioned above, indicate the level(s) at which they can be applied.
+          \end{itemize}
+\end{itemize}
+
+\question{What are the effects of a spoofing attack on a GNSS receiver? (2 pts) How can a receiver fail or fail to respond to a spoofing attack? (2 pts) Possible disruptions of the attack? (2 pts)}
+
+\question{In a GNSS, satellites broadcast crucial information to the users:}
+\begin{parts}
+    \part Identify the crucial pieces of information that satellites broadcast to users. (2 points)
+    \begin{itemize}
+        \item List the essential data elements transmitted by GNSS satellites to receivers.
+    \end{itemize}
+    \part Explain how these pieces of information are utilized by a receiver. (4 points)
+    \begin{itemize}
+        \item Describe how the receiver utilizes satellite signals to calculate its position, velocity, and time (PVT).
+    \end{itemize}
+\end{parts}
+
+\question{Describe the effect of pseudorange errors on the Position, Velocity, and Time (PVT) solution and explain the role of the Dilution of Precision factor (e.g., GDOP, HDOP).}
+\begin{parts}
+    \part Explain the effect of pseudorange errors on the Position, Velocity, and Time (PVT) solution. (3 points)
+    \begin{itemize}
+        \item Describe how errors in the measurement of pseudoranges from GNSS satellites affect the accuracy of the PVT solution.
+    \end{itemize}
+    \part Discuss the role of the Dilution of Precision (DOP) factor in GNSS positioning. (3 points)
+    \begin{itemize}
+        \item Define what Dilution of Precision (DOP) factors (e.g., GDOP, HDOP) represent in GNSS.
+        \item Discuss the relationship between DOP values and the accuracy and reliability of the PVT solution.
+        \item Provide examples of scenarios where high and low DOP values impact GNSS performance.
+    \end{itemize}
+\end{parts}

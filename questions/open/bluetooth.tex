@@ -1,0 +1,71 @@
+\section{Bluetooth protocol and security}
+
+
+\question{Secure simple pairing + MITM attack}
+
+\question{Differences between BT BR/EDR and BLE (frequencies, FEC/ARQ, …)}
+
+\question{Which are the privacy features offered by Bluetooth? Which attack do they offer protection to? How is the problem solved using the IRK? Describe in detail how the IRK is used to provide resolvable private addresses.}
+
+\question{What are the 4 association modes in Bluetooth and what capabilities a device must have to support them (in general)? Why are they used? For every association mode, tell which capabilities a device must have to support them (for Numerical comparison the devices must have these capabilities and so on and so forth)}
+
+\question{Bluetooth modes OOB, Just works, passkey entry, numeric comparison and hardware required to use them}
+
+\question{Describe the 4 states of a Bluetooth device (standby, advertiser, scanner, initiator, and master/slave) (3 points) and prove an example with all the steps, A sends frame to B, B sends broadcast to A, A extract YYYY, ZZZZ from XXX to get GGGG etc (3 points)}
+
+\question{Explain the main design goals for the BT technology and the technical constraints that guided the design (2 pts). Describe BT network topologies and the role of nodes in each scenario (2 pts). Describe the physical layer communication mechanisms implemented in BT BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (2 pts)}
+
+\begin{solution}
+    % Z2lvcmdpbw==, corrected
+    This solution got 6/6 points; it's missing "how does routing work in piconets" but I didn't find it in the slides.
+
+    The main goal for Bluetooth technology was to create a wireless cable rather than a wireless network. It is designed to be ubiquitous, inexpensive, and close range ($<10m$).
+
+    In the Bluetooth protocol, we always have a master device and a slave device, forming a piconet. There can be a maximum of 7 devices in a single piconet, and we can create scatternets by connecting piconets with each other. Communication between piconets can occur via a device that acts as a slave in one piconet and a master in another, or via a device that acts as a master in one and a slave in another. A device CANNOT be a master in both piconets. Within master-slave communications, the master decides when the slaves should communicate with it, and slave devices cannot communicate directly with each other.
+
+    The physical layer communication mechanism is implemented using FHSS (Frequency Hopping Spread Spectrum), which involves dividing the general channel into smaller channels and using a pattern (or a pre-specified one) to jump (hop) from one channel to another. This is done to prevent or at least complicate sniffing attacks. There is a special version of FHSS called Adaptive FHSS, where devices use statistical algorithms to choose which channels to hop on based on the least busy ones. However, if all devices use this mode, they will consequently hop to the same channels, making them busier and reducing overall communication effectiveness.
+
+    The frequency band used for both BR/EDR and BLE ranges from 2.4GHz to 2.485GHz, which is typically very busy. The two versions use a different number of channels: BR/EDR uses 79 channels, hopping every 1600ms, while BLE uses 40 channels, of which 37 are reserved for data. Because this frequency band is very busy, ARQ (Automatic Repeat reQuest) and FEC (Forward Error Correction) mechanisms are implemented.
+
+    ARQ uses ACK (acknowledgment) and NACK (negative acknowledgment) messages to ensure the correct reception of messages, which is especially important given the busy frequency.
+
+    FEC directly influences efficiency and can be implemented in two ways: 1/3 efficiency, where each message is sent over the channel 3 times, and 2/3 efficiency, where for every 10 bits of data, 5 bits of error correction codes are sent, capable of correcting 1-bit errors and detecting 2-bit errors.
+\end{solution}
+
+
+\question{Describe the Bluetooth association models and the mechanisms implemented to support the different capabilities a device could have. (3 points)
+
+    What is the goal of implementing such association models? (1 point)
+
+    What are the minimum hardware capabilities two devices must have to support each of the four association models? (2 points)}
+\begin{solution}
+    % Z2lvcmdpbw==, corrected
+    This solution got 5.50/6 points.
+
+    In Bluetooth, the four association models are based on different key agreement protocols, which are then used to encrypt the connection between devices. During the pairing process, hardware capabilities are exchanged during the feature exchange to determine the most secure association method supported by both devices.
+
+    The four association models are:
+
+    Just Works, No Input/Output (No action required)
+    Numeric Comparison
+    Passkey Entry
+    Out of Band (OOB), typically using NFC (Near Field Communication)
+
+    The goal of implementing these association models is to offer different modes that can be used based on the hardware capabilities of diverse Bluetooth devices.
+
+    For "Just Works", no specific hardware capabilities are required; initiating the procedure can be done with a button or similar action. For Numeric Comparison, at least one of the devices needs to have a screen to display the comparison, and a method (such as a touch input, button, or keypad) to accept or reject it. For Passkey Entry, both devices need a screen: one to confirm the passkey being entered and the other to enter it via a keyboard, touchscreen, or keypad. For OOB, support for an out-of-band method like NFC is required.
+\end{solution}
+
+
+\question{Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario. (2 points). Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (4 points)}
+
+\question{Describe the Bluetooth Secure Simple Pairing, showing the sequence of messages the two devices exchange
+    to complete the pairing. (4 points).
+
+    Describe a possible Man In The Middle attack to such a scheme. (2 points)
+    You can use a numbered list and state who sends what to who, or which computations a device does with
+    some information:
+    1. A frame XXX to B
+    2. B sends frame YYY to broadcast
+    3. A extracts ZZZ from YYY and computes KKK, YYY, LLL
+    4. ...}
