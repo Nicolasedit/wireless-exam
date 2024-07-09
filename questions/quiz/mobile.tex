@@ -20,6 +20,16 @@
     \choice None of the other options.
 \end{checkboxes}
 
+\question{The SS7 signalling network is a protocol that}
+\begin{checkboxes}
+    % Source: google doc, verified
+    \CorrectChoice Uses a datagram network to exchange signaling messages
+    \CorrectChoice Uses out-of-band signalling approach so that messages are sent on a separate network than the telephone network.
+    \choice Is a circuit-switched technology to setup, manage, and tear-down communications in the telephone network.
+    \choice Is based on the ISO-OSI reference layer.
+    \choice None of the other options.
+\end{checkboxes}
+
 \question{Purpose of paging and location are in mobile network}
 
 \question{What is the difference between the Visitor Location Register (VLR) and the Home Location Register (HLR) in GSM networks?}
@@ -32,18 +42,26 @@
 \end{checkboxes}
 
 
-\question{Describe device authentication in GSM (completare l'immagine con le parti date.)}
-\begin{solution}
+\question{
+    Consider the GSM Authentication Protocol timeline shown below:
+\begin{figure}[H]
     \center
     \includegraphics[width=0.7\textwidth]{images/GSM_auth.png}
+\end{figure}
+Associate the correct information to the correct number:
+}
+\begin{solution}
+    \begin{enumerate}
+        \item The MS sends the IMSI to the Visitor Location Register
+        \item The Visitor Location Register forwards the subscriber IMSI to the Home Location Register
+        \item Generates (RAND, SRES, Kc) and send them to the VLR
+        \item Forwards RAND to MS
+        \item Computes SRES' and send it to the VLR
+        \item Compares SRES and SRES'
+        \item Ki
+        \item Kc
+    \end{enumerate}
 \end{solution}
-
-
-\question{4G networks - techniques used to enhance security}
-
-\question{GSM Authentication}
-
-
 
 \question{What is the primary purpose of handover in mobile networks?}
 \begin{checkboxes}
@@ -62,6 +80,18 @@
     \choice Mobile Management Entity (MME), Serving Gateway (SGW), and Packet Data Network Gateway (PGW).
     \choice None of the other options.
 \end{checkboxes}
+
+\question{Associate the correct definition to the correct component in the GMS architecture}
+\begin{solution}
+    % Source: google doc
+    \begin{itemize}
+        \item \textbf{Mobile Switching Centre:} Includes all control and signalling functions for managing calls and mobility
+        \item \textbf{User Equipment:} The user's mobile device. It includes a Terminal Equipment (TE) and a Subscriber Identity Module (SIM) card
+        \item \textbf{Base Station Controller:} Implements higher layers protocols and manages all transmission resources of the connected BTSs
+        \item \textbf{Base Transceiver Station:} Manages physical layer connections with the UEs and the BSC
+        \item \textbf{Gateway MSC:} Connects the mobile network to the external telephone networks. It implements all signalling interworking functions 
+    \end{itemize}
+\end{solution}
 
 \question{What are the advantages and disadvantages of having small or larger cells in mobile networks?}
 \begin{checkboxes}
@@ -109,3 +139,35 @@
         \item GMS Multiple Access is based on \fillin[Time Division and Frequency division Multiple Access][2in]
     \end{itemize}
 \end{solution}
+
+\question{What is the purpose of the Ki key stored on a SIM card?}
+\begin{checkboxes}
+    \choice To identify the SIM card and its subscriber's information.
+    \choice To store the subscriber's phonebook and SMS messages in encrypted format.
+    \choice To encrypt voice and data transmissions over the mobile network.
+    \CorrectChoice To authenticate the SIM card to the mobile network.
+    \choice None of the other options.
+\end{checkboxes}
+
+\question{Associate the correct definition to the following UMTS security features:}
+\begin{solution}
+    % source: google doc
+    \begin{itemize}
+        \item \textbf{Network domain security}: The set of security features that enable nodes in the provider domain to exchange signalling data securely.
+        \item \textbf{Visibility and configurability of security}: The set of features to inform the user whether a security feature is in operation or not.
+        \item \textbf{User domain security}: The set of security features that secure access to mobile stations.
+        \item \textbf{Network access security}: The set of security features that provide users with secure access to 3G services.
+        \item \textbf{Application domain security}: The set of security features that enable applications in the user and the provider domain to exchange messages securely.
+    \end{itemize}
+\end{solution}
+
+
+\question{Considering the GSM A5 algorithm used to provide confidentiality in GMS, which of the following claims are correct?}
+\begin{checkboxes}
+    % Source: google doc
+    \CorrectChoice It uses multiple Linear Feedback Shift Registers which are clocked to increase the entropy of the keystream.
+    \CorrectChoice It uses 54 bits long likely to allow national agencies to decrypt communications.
+    \CorrectChoice There were two versions of the A5 algorithm: one for usage in western countries, one for export outside western countries.
+    \CorrectChoice It uses the Cypher Key Kc and the Frame Number FN to compute the encryption key stream.
+    \choice None of the other options.
+\end{checkboxes}

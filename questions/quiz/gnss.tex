@@ -37,8 +37,8 @@
     \choice Yes. GNSS frequency bands are reserved only in the country that owns each system (e.g., the US for GPS, the EU for Galileo), therefore, other signal transmissions can freely interfere with those bands in most regions.
     \choice No. GNSS frequency bands are reserved, and no other signal transmission interferes with those bands.
     \choice No. GNSS signals are generally very weak; however, the use of spread spectrum codes makes them invulnerable to interference.
-    \choice None of the other options.
     \CorrectChoice Yes. Since GNSS signals are generally very weak, strong out-of-band spillovers of powerful signals can interfere with the GNSS band.
+    \choice None of the other options.
 \end{checkboxes}
 
 \question{Which of the following is a common indicator of a GNSS spoofing attack?}
@@ -83,10 +83,10 @@
 \question{How does GNSS jamming differ from GNSS spoofing?}
 \begin{checkboxes}
     \choice Jamming affects only timing information, while spoofing affects positional data.
-    \choice None of the other options.
     \choice Spoofing is only possible with military-grade equipment, while jamming is a natural phenomenon.
     \choice Jamming requires cryptographic methods, while spoofing uses signal modulation.
     \CorrectChoice Jamming disrupts signals by transmitting noise, while spoofing sends counterfeit signals.
+    \choice None of the other options.
 \end{checkboxes}
 
 \question{Which technique can help detect GNSS jamming?}
@@ -114,4 +114,14 @@
     \CorrectChoice Unlimited, thanks to its broadcast nature and one-way communication from GNSS satellites to receivers.
     \choice It depends on the type of user device. Low-power consumption user receivers can be easily supported, thus they can be more.
     \choice None of the other options.
+\end{checkboxes}
+
+\question{Why can a goodness-of-fit test be an effective method for interference detection?}
+\begin{checkboxes}
+    % Source: google doc
+    \CorrectChoice Because of the generally non-Gaussian nature of the interfering signal. By comparing the observed signal characteristics to the expected characteristics, deviations from a normal distribution can indicate the presence of interference.
+    \choice Because every interfering signal can be modeled through a normal distribution.
+    \choice Because the receiver noise is normally distributed, and in the presence of interference, the distribution of signal samples generally maintains its Gaussian shape.
+    \choice Because goodness-of-fit tests are designed to detect any deviations from a specific expected distribution and can distinguish between any types of interference since they are all characterized statistically.
+    \choice None of the others.
 \end{checkboxes}

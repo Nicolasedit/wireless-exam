@@ -84,3 +84,32 @@
     \choice It leverages the signal to noise ratio to authenticate the device.
     \choice None of the other options
 \end{checkboxes}
+
+\question{Which are the characteristics the Bluetooth devices must have to support passkey entry?}
+\begin{checkboxes}
+    \choice Both devices must have a keypad and a display.
+    \choice Both devices must have a keypad, a display and a NFC reader.
+    \choice It is sufficient that both devices have a display.
+    \choice It is sufficient that one device has a keyboard.
+    \CorrectChoice None of the other options.
+\end{checkboxes}
+
+\question{Associate the correct definition to the correct Bluetooth Association Modes}
+\begin{solution}
+    % Source: google doc
+    \begin{itemize}
+        \item \textbf{Passkey Entry}: The user enters the passkey into the device which must have a keyboard.
+        \item \textbf{Out-of-Band}: Use a mechanism that is not based on Bluetooth to associate.
+        \item \textbf{Numeric Comparison}: A number is displayed on the two devices and the user confirms the number is identical.
+        \item \textbf{Just Works}: Used for devices with no Display or Keyboard, with default passkey.
+    \end{itemize}
+\end{solution}
+
+\question{How is a Man-in-the-Middle (MITM) attack prevented in Bluetooth simple security pairing?}
+\begin{checkboxes}
+    \choice By rotating the Bluetooth MAC address during the pairing process.
+    \choice By using public key cryptography for key exchange.
+    \CorrectChoice By encrypting the pairing process using a shared secret key.
+    \choice By using a fixed PIN that is known only to the user and the device.
+    \choice None of the other options.
+\end{checkboxes}
