@@ -77,18 +77,6 @@
     % cmljY2FyZG9yb3Npbg==, corrected
     This solution got 6/6 points
 
-    In Bluetooth protocol stack, the GAP (Generic Access Profile) protocol defines roles, modes and procedures that devices must follow to establish a connection. The goal of the GAP protocol is to establish an L2CAP (L2 Bluetooth protocol) channel, to be subsequently used for pairing and eventual data transmission. According to GAP specifications, device can be in 6 different possible states.
-    1. Standby: initial state of all devices that are not actively communicating
-    2. Advertiser: from the Standby state a device willing to announce its presence to other devices, waiting for connections, can move to the Advertiser state. In this state the device regularly broadcasts advertisement beacon messages. Usually devices moving into the Advertiser state are low power devices (e.g. headphones, smartwatch...)
-    3. Scanner: from the Standby state a device can move into the Scanner state and start listening for advertisement messages of nearby devices (In Bluetooth LE 3 channels are dedicated only to advertisement message broadcasting). Usually devices moving into the Scanner state are device with a higher energy or larger energy resources, like smartphones or PCs.
-    4. Initiator: A device in the Scanner state can move into the Initiator state after selecting a device to connect to and initiation the connection procedure by sending a Connection request.
-    5. Master: After the L2 connection is established, the Initiator device is moving into the Master state. The Master is in charge of controlling all connection parameters and manage channel usage (e.g. master synchronizes clock for transmission time slots definition and frequency-hopping sequence to be followed by devices)
-    6. Slave: After the L2 connection is establiushed, the Scanner device moves into the Slave state.
-    Standby -> Advertiser --------------> Slave 
-    Standby -> Scanner -> Initiator -> Master
-
-    After the connection is setup, pairing procedure can start, allowing the two devices to authenticate and exchange (according to the agreed security level) symmetric keys to be used to protect subsequent future connections.
-
     In the Bluetooth protocol stack, the GAP (Generic Access Profile) protocol defines roles, modes, and procedures that devices must follow to establish a connection. The goal of the GAP protocol is to establish an L2CAP (Logical Link Control and Adaptation Protocol, a L2 Bluetooth protocol) channel, to be subsequently used for pairing and eventual data transmission. According to GAP specifications, devices can be in six different possible states:
     \begin{enumerate}
         \item \textbf{Standby}: The initial state of all devices that are not actively communicating.
