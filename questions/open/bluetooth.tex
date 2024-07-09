@@ -61,9 +61,53 @@
     For "Just Works", no specific hardware capabilities are required; initiating the procedure can be done with a button or similar action. For Numeric Comparison, at least one of the devices needs to have a screen to display the comparison, and a method (such as a touch input, button, or keypad) to accept or reject it. For Passkey Entry, both devices need a screen: one to confirm the passkey being entered and the other to enter it via a keyboard, touchscreen, or keypad. For OOB, support for an out-of-band method like NFC is required.
 \end{solution}
 
-\question{Describe the Bluetooth device states (standby, advertiser, scanner, initiator, master, slave). (3 points)
+\question{Describe the Bluetooth device states (standby, advertiser, scanner, initiator, master, slave). (3 points)}
+\begin{parts}
+    \part Provide an example considering two devices that would like to interconnect. (3 points)
+    You can use a numbered list and state who sends what to who, or which computations a device does with
+    some information:
+    \begin{itemize}
+        \item A sends frame XXX to B
+        \item B sends frame YYY to broadcast
+        \item A extracts ZZZ from YYY and computes KKK, YYY, LLL
+        \item ...
+    \end{itemize}
+\end{parts}
+\begin{solution}
+    % cmljY2FyZG9yb3Npbg==, corrected
+    This solution got 6/6 points
 
-Provide an example considering two devices that would like to interconnect. (3 points)}
+    In Bluetooth protocol stack, the GAP (Generic Access Profile) protocol defines roles, modes and procedures that devices must follow to establish a connection. The goal of the GAP protocol is to establish an L2CAP (L2 Bluetooth protocol) channel, to be subsequently used for pairing and eventual data transmission. According to GAP specifications, device can be in 6 different possible states.
+    1. Standby: initial state of all devices that are not actively communicating
+    2. Advertiser: from the Standby state a device willing to announce its presence to other devices, waiting for connections, can move to the Advertiser state. In this state the device regularly broadcasts advertisement beacon messages. Usually devices moving into the Advertiser state are low power devices (e.g. headphones, smartwatch...)
+    3. Scanner: from the Standby state a device can move into the Scanner state and start listening for advertisement messages of nearby devices (In Bluetooth LE 3 channels are dedicated only to advertisement message broadcasting). Usually devices moving into the Scanner state are device with a higher energy or larger energy resources, like smartphones or PCs.
+    4. Initiator: A device in the Scanner state can move into the Initiator state after selecting a device to connect to and initiation the connection procedure by sending a Connection request.
+    5. Master: After the L2 connection is established, the Initiator device is moving into the Master state. The Master is in charge of controlling all connection parameters and manage channel usage (e.g. master synchronizes clock for transmission time slots definition and frequency-hopping sequence to be followed by devices)
+    6. Slave: After the L2 connection is establiushed, the Scanner device moves into the Slave state.
+    Standby -> Advertiser --------------> Slave 
+    Standby -> Scanner -> Initiator -> Master
+
+    After the connection is setup, pairing procedure can start, allowing the two devices to authenticate and exchange (according to the agreed security level) symmetric keys to be used to protect subsequent future connections.
+
+    In the Bluetooth protocol stack, the GAP (Generic Access Profile) protocol defines roles, modes, and procedures that devices must follow to establish a connection. The goal of the GAP protocol is to establish an L2CAP (Logical Link Control and Adaptation Protocol, a L2 Bluetooth protocol) channel, to be subsequently used for pairing and eventual data transmission. According to GAP specifications, devices can be in six different possible states:
+    \begin{enumerate}
+        \item \textbf{Standby}: The initial state of all devices that are not actively communicating.
+        \item \textbf{Advertiser}: From the Standby state, a device willing to announce its presence to other devices and waiting for connections can move to the Advertiser state. In this state, the device regularly broadcasts advertisement beacon messages. Usually, devices moving into the Advertiser state are low-power devices (e.g., headphones, smartwatches).
+        \item \textbf{Scanner}: From the Standby state, a device can move into the Scanner state and start listening for advertisement messages from nearby devices. (In Bluetooth LE, three channels are dedicated only to advertisement message broadcasting). Typically, devices moving into the Scanner state have higher or larger energy resources, such as smartphones or PCs.
+        \item \textbf{Initiator}: A device in the Scanner state can move into the Initiator state after selecting a device to connect to and initiating the connection procedure by sending a connection request.
+        \item \textbf{Master}: After the L2 connection is established, the Initiator device moves into the Master state. The Master is in charge of controlling all connection parameters and managing channel usage (e.g., the Master synchronizes the clock for transmission time slots definition and the frequency-hopping sequence to be followed by devices).
+        \item \textbf{Slave}: After the L2 connection is established, the Scanner device moves into the Slave state.
+        \begin{verbatim}
+            Standby -> Advertiser --------------> Slave
+            Standby -> Scanner -> Initiator -> Master
+        \end{verbatim}
+
+    \end{enumerate}
+
+    After the connection is set up, the pairing procedure can start, allowing the two devices to authenticate and exchange symmetric keys (according to the agreed security level) to be used to protect subsequent future connections.
+
+
+\end{solution}
 
 
 \question{Explain the main design goals for the Bluetooth technology and the technical constraints that guided the design, and the Bluetooth network topologies and the role of nodes in each scenario. (2 points). Describe the physical layer communication mechanisms implemented in Bluetooth BR/EDR and the differences since BLE was introduced: which frequency range does it use, which multiple access scheme does it use, which FEC/ARQ mechanism it provides, etc. (4 points)}
