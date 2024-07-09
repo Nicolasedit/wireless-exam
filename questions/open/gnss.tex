@@ -23,6 +23,23 @@
     \part[3] Describe a meaconing attack on a GNSS receiver. Define what a meaconing attack is. Explain how it is conducted. Mention any distinguishing characteristics of a meaconing attack compared to other types of GNSS interference.
     \part[3] Discuss the effects of a meaconing attack on a GNSS receiver. Describe the impact on the receiver's position, velocity, and time (PVT) calculations. Highlight any possible indicators that a meaconing attack is occurring.
 \end{parts}
+\begin{solution}
+    % cmljY2FyZG9yb3Npbg==, corrected
+    This solution got 6/6 points
+
+    In a GNSS system, a meaconing attack is performed by rebroadcasting (towards the victim receiver device) after some time delay previously captured legitimate satellite messages. Due to the design of GNSS systems, such kind of messages are going to affect the possibility of receiver terminals to reliably compute the position, velocity, and time coordinates. Receiver terminals indeed rely on the measured time difference between the message reception and the time of transmission by the satellite contained inside the message. Therefore, when old satellite messages are received, the time computation is inevitably going to be incorrect. PVT calculations are going to be less accurate, usually observing a lot of sudden jumps in the computed position.
+
+    \textbf{Note}: rebroadcasting all captured satellite signals after a fixed time delay is likely not going to affect much the PVT calculations on target victims, as the fixed time delay is going to be compensated by the user clock bias variable, a variable of the PVT problem introduced to handle clock desynchronization between user devices and the satellite system. This behavior was observed during the hands-on lab on GNSS.
+
+    Compared to other types of GNSS interference, like jamming, the goal of this attack is not to completely deny the GNSS service to the victim (affecting its capability of detecting satellite wireless signals), but to make the computed position unreliable. Another kind of attack could be performed against GNSS receivers: due to the lack of any kind of message encryption and/or sender authentication, an attacker is able to spoof fake satellite messages carefully crafted to target the final PVT computation on receiver terminals.
+
+    Meaconing attacks could be detected:
+    \begin{itemize}
+        \item after PVT solution, by sudden jumps in computed positions
+        \item at the physical layer, like for jamming and spoofing attacks, by different signal strength, noise, and SNR levels compared to the legitimate signals received by satellites.
+    \end{itemize}
+
+\end{solution}
 
 \question{Interference detection methods can vary in their approaches within GNSS receivers:}
 \begin{parts}
@@ -53,17 +70,17 @@
 
 \question{Describe interference detection and mitigation approaches based on transformed domains adopted in GNSS receivers. (6 points)}
 \begin{parts}
-    \part[3] Explain the general interference detection and mitigation approach based on transformed domains used in GNSS receivers. 
+    \part[3] Explain the general interference detection and mitigation approach based on transformed domains used in GNSS receivers.
     \begin{itemize}
         \item Discuss how transformed domains (e.g., frequency, time-frequency) are utilized to detect and mitigate interference.
         \item Provide examples of specific techniques or algorithms used in transformed domains for interference detection and mitigation
     \end{itemize}
-    \part[1.5] List and describe a frequency domain mitigation technique. 
+    \part[1.5] List and describe a frequency domain mitigation technique.
     \begin{itemize}
         \item Identify a specific technique used in the frequency domain for mitigating interference in GNSS receivers.
         \item Describe how this technique operates to suppress or filter out interference signals effectively.
     \end{itemize}
-    \part[1.5] List and describe a time domain mitigation technique. 
+    \part[1.5] List and describe a time domain mitigation technique.
     \begin{itemize}
         \item Identify a specific technique used in the time domain for mitigating interference in GNSS receivers.
         \item Explain how this technique analyzes temporal characteristics of signals to detect and mitigate interference.

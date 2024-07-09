@@ -63,6 +63,47 @@
 Consider UDP header of 8B, TCP header of 20B, IP header of 20B, Ethernet header of 38B. Consider the maximum efficiency of WiFi-6 to be 80\% on MTU frames.
 }
 
+\begin{solution}
+    % cmljY2FyZG9yb3Npbg==, corrected
+    This solution got 6/6 points.
+
+    Scenario 1:
+    Considering:
+    \begin{align*}
+    \text{UDP-over-ETH efficiency} &= \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 8_{\text{UDP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.956 \\
+    \text{TCP-over-ETH efficiency} &= \frac{1500_{\text{MTU}} - 20_{\text{IP}} - 20_{\text{TCP}}}{1500_{\text{MTU}} + 38_{\text{ETH}}} = 0.949
+    \end{align*}
+    Generic 802.11g efficiency: 50\% (TCP), 55\% (UDP). \\
+    ETH maximum throughput: 1000 Mbps. \\
+    802.11g maximum throughput: 54 Mbps.
+    \begin{enumerate}
+        \item The maximum throughput is limited by the 802.11g link (54 Mbps < 1000 Mbps). Considering an efficiency of 0.55, expected goodput is 29.7 Mbps.
+        \item The maximum throughput is limited by the 802.11g link (54 Mbps < 1000 Mbps). Considering an efficiency of 0.5 (lower than UDP due to acknowledgements and possible retransmissions), expected goodput is 27 Mbps.
+        \item The maximum throughput is limited by the 802.11g link (54 Mbps < 1000 Mbps). We need to consider channel sharing for two STAs, so actual throughput for each STA is ~27 Mbps. With efficiency 0.55, expected goodput is 14.85 Mbps.
+        \item The maximum throughput is limited by the 802.11g link (54 Mbps < 1000 Mbps). We need to consider channel sharing for two STAs, so actual throughput for each STA is ~27 Mbps. With efficiency 0.5, expected goodput is 13.5 Mbps.
+    \end{enumerate}
+
+    Scenario 2:
+    In 802.11g, the maximum theoretical throughput is still 54 Mbps on the 5 GHz band (600 Mbps on the 5 GHz band if using 802.11n).
+    Considering the same efficiency values as in Scenario 1:
+    \begin{enumerate}
+        \item Max throughput 54 Mbps, expected goodput 29.7 Mbps.
+        \item Max throughput 54 Mbps, expected goodput 27 Mbps.
+        \item Max throughput 54 Mbps, but no channel sharing as the two STAs are using different frequency bands. Expected goodput 29.7 Mbps.
+        \item Max throughput 54 Mbps, but no channel sharing as the two STAs are using different frequency bands. Expected goodput 27 Mbps.
+    \end{enumerate}
+
+    Scenario 3:
+    (Considering WiFi 6 efficiency of 0.8)
+    \begin{enumerate}
+        \item Considering ETH throughput being reduced to 956 Mbps and WiFi 6 throughput reduced to 1100 Mbps * 0.80 = 880 Mbps, expected goodput is going to be 880 Mbps.
+        \item Considering ETH throughput being reduced to 949 Mbps and WiFi 6 throughput reduced to 1100 Mbps * 0.80 = 880 Mbps, expected goodput is going to be 880 Mbps.
+        \item As the two STAs are on different frequency bands, the wireless link is not shared, allowing each STA to use its maximum capacity. The Ethernet link must be shared instead, ~1000 Mbps/2 = 500 Mbps. So expected goodput is 500 Mbps * 0.956 = 478 Mbps.
+        \item As the two STAs are on different frequency bands, the wireless link is not shared, allowing each STA to use its maximum capacity. The Ethernet link must be shared instead, ~1000 Mbps/2 = 500 Mbps. So expected goodput is 500 Mbps * 0.949 = 474.5 Mbps.
+    \end{enumerate}
+\end{solution}
+
+
 \question{Describe the frames exchanged by an STA and an AP to inform the STA about the SSID of the AP; what kind of attack exploits this mechanism?}
 
 \question{Describe step For OPEN AUTH system when the AP communicates ESSID and when not}

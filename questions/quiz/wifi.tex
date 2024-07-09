@@ -76,11 +76,11 @@
         \item \textbf{WEP Password cracking} → Leverage the reusage of Initialization Vector to create a collision and then break the RC4 key.
 
         \item \textbf{NAV attack}: → An attack where the attacker manipulates the frame duration value to prevent other devices from accessing the channel.
-    
+
         \item \textbf{Rouge Access Point}: → A fake AP that impersonates the real AP.
-    
+
         \item \textbf{De-authentication attack}: → The attacker sends forged de-authentication frames to force a STA to repeat the connection process.
-    
+
         \item \textbf{Chopchop attack} → The process to recover the plaintext content of a frame by replaying a portion of the original frame.
     \end{itemize}
 \end{solution}
@@ -296,12 +296,21 @@
     \choice None of the other options.
 \end{checkboxes}
 
-\question{Which of the following best defines the Access Control service in the context of wireless networks?}
+\question{Associate the correct definition of the following terms:}
+\begin{solution}
+    \begin{itemize}
+        \item \textbf{Association request}: A frame the station sends to the AP to enable the communication in the WLAN
+        \item \textbf{Authentication request}: A frame the station sends to the AP to provide its identity and request access to the WLAN.
+        \item \textbf{Probe request}: A request frame the station sends to look for the presence of a WLAN AP.
+        \item \textbf{Beacon}: A broadcast message sent to advertise the presence and capabilities of a WLAN.
+    \end{itemize}
+\end{solution}
+
+\question{Which of the following statements correctly describes the difference between deauthentication and disassociation attacks in WiFi networks?}
 \begin{checkboxes}
-    % source: google doc
-    \CorrectChoice A service that restricts access to network resources based on user identity and predefined policies.
-    \choice A service that monitors and logs network traffic for potential threats and attacks.
-    \choice A service that ensures data integrity by verifying that data has not been altered during transmission.
-    \choice A service that provides encryption to secure data transmitted over the network.
+    \choice Deauthentication attacks force devices to disconnect by sending fake de-authentication frames, while disassociation attacks force devices to reconnect by sending fake association frames.
+    \choice Deauthentication attacks involve intercepting and decrypting communication, while disassociation attacks involve jamming the wireless signal.
+    \choice Deauthentication attacks gain unauthorized access by cracking the encryption key, while disassociation attacks flood the network with excessive traffic.
+    \CorrectChoice Deauthentication attacks force devices to disconnect by sending fake de-authentication frames, while disassociation attacks force devices to disconnect by sending fake disassociation frames.
     \choice None of the other options.
 \end{checkboxes}
