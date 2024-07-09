@@ -47,18 +47,38 @@
         \choice None of the other options.
     \end{checkboxes}
 
+    \question{Which of the following best defines a ciphertext-only attack in the context of wireless network security?}
+    \begin{checkboxes}
+        \CorrectChoice An attack where the attacker can only access the ciphertext and attempts to decrypt it without any additional information.
+        \choice An attack where the attacker has access to both the plaintext and its corresponding ciphertext.
+        \choice An attack where the attacker manipulates the ciphertext to produce a predictable change in the plaintext.
+        \choice An attack where the attacker intercepts and alters the communication between two parties.
+        \choice None of the other options.
+    \end{checkboxes}
+
     \section{Signals and basics}
 
     \question{In digital Communication system which type of waveforms are propagated in the channel?}
 
     \question{Order the elements in the transmission chain (encoder, modulator, channel etc.)}
 
-    \question{Why the definition of the bandwidth 3db}
+    \question{Why do we need a practical definition of bandwidth like the '3dB bandwidth'?}
+    \begin{checkboxes}
+        \choice Because it is easier to measure a 3dB bandwidth rather than other definitions of bandwidth.
+        \CorrectChoice Because finite duration signals have finite support in the frequency domain.
+        \choice Because finite duration signals have infinite support in the frequency domain.
+        \choice It is just a common practice. Defining the bandwidth as the support of the signal in the frequency domain works as well for practical
+        applications.
+        \choice None of the other options.
+    \end{checkboxes}
+
 
     \question{PSK modulation - about the energy level of symbols and saturation level of a power amplifier}
 
     \question{Put the building blocks of a digital communication system in the correct order:}
-    TX --> Encoder --> Modulator  --> Channel  --> Demodulator  --> Decoder  --> RX
+    \begin{solution}
+        TX $\,\to\,$ Encoder $\,\to\,$ Modulator  $\,\to\,$ Channel  $\,\to\,$ Demodulator  $\,\to\,$ Decoder  $\,\to\,$ RX
+    \end{solution}
 
     \question{A digital communication system uses a 2-PAM modulation with rectangular pulses and a given average energy per symbol $E_s$. What happens if we adopt instead a 4-PAM modulation, using the same basic pulse and average energy per symbol $E_s$?}
     \begin{checkboxes}
@@ -66,6 +86,15 @@
         \CorrectChoice The bitrate increases, but the system becomes more error prone.
         \choice The bandwidth efficiency increases resulting in a generally larger bandwidth of the transmitted signals.
         \choice The bandwidth efficiency decreases resulting in a generally larger bandwidth of the transmitted signals.
+        \choice None of the other options.
+    \end{checkboxes}
+
+    \question{Which operation performed on a signal allows moving its frequency content around a desired frequency?}
+    \begin{checkboxes}
+        \CorrectChoice Multiplication with a sinusoidal function
+        \choice Convolution with a sinusoidal function
+        \choice Amplitude modulation
+        \choice Lowpass filtering
         \choice None of the other options.
     \end{checkboxes}
 
@@ -153,6 +182,25 @@
         \choice A pseudorange is a range affected by an unsolvable measurement error.
         \choice None of the other options.
     \end{checkboxes}
+
+    \question{How does GNSS jamming differ from GNSS spoofing?}
+    \begin{checkboxes}
+        \choice Jamming affects only timing information, while spoofing affects positional data.
+        \choice None of the other options.
+        \choice Spoofing is only possible with military-grade equipment, while jamming is a natural phenomenon.
+        \choice Jamming requires cryptographic methods, while spoofing uses signal modulation.
+        \CorrectChoice Jamming disrupts signals by transmitting noise, while spoofing sends counterfeit signals.
+    \end{checkboxes}
+
+    \question{In a GNSS, what crucial pieces of information are the satellites broadcasting to the users?}
+    \begin{checkboxes}
+        \choice The position of the user
+        \choice The user clock bias
+        \CorrectChoice Information about the location of the satellite and the transmission time of the signal
+        \choice The travelling time of the signal
+        \choice None of the other options.
+    \end{checkboxes}
+
 
 
     \section{WLAN / wifi}
@@ -326,6 +374,34 @@
         Other blocks were not utilized.
     \end{solution}
 
+    \question{What type of encryption does OWE use to secure data in transit?}
+    \begin{checkboxes}
+        \choice Asymmetric encryption using RSA keys.
+        \choice Static encryption keys manually configured by the user.
+        \choice Symmetric key encryption with a pre-shared key.
+        \CorrectChoice Diffie-Hellman key exchange to establish a shared secret.
+        \choice None of the other options.
+    \end{checkboxes}
+
+    \question{Select the TRUE answers among the following ones about the purposes of CSMA-CA in wireless networking.}
+    \begin{checkboxes}
+        \CorrectChoice It tries to prevent collisions during data transmission.
+        \CorrectChoice It ensures all devices have equal access to the wireless medium.
+        \CorrectChoice It cannot prevent collisions entirely, especially in high-density networks.
+        \choice It encrypts data packets for secure transmission.
+        \choice None of the other options.
+    \end{checkboxes}
+
+
+    \question{Which of the following security features does Simultaneous Authentication of Equals (SAE) provide?}
+    \begin{checkboxes}
+        \choice Stronger message authentication via MIC instead of CRC.
+        \CorrectChoice Protection against man-in-the-middle attacks.
+        \CorrectChoice Protection against offline dictionary attacks.
+        \CorrectChoice Mutual authentication between devices.
+        \choice None of the other options.
+    \end{checkboxes}
+
 
     \section{WPAN / Bluetooth}
 
@@ -338,7 +414,14 @@
         \choice None of the other options.
     \end{checkboxes}
 
-    \question{What is bluesnarfing?}
+    \question{What is the Bluesnarfing attack?}
+    \begin{checkboxes}
+        \choice A vulnerability that allows unauthorized access to Bluetooth devices via malicious code execution.
+        \choice A method for securely pairing Bluetooth devices using encryption keys.
+        \choice A feature that enhances Bluetooth data transmission speed.
+        \choice A protocol used for secure pairing in Bluetooth devices.
+        \CorrectChoice None of the other options.
+    \end{checkboxes}
 
     \question{Which security services does Bluetooth support?}
     \begin{checkboxes}
@@ -373,13 +456,36 @@
         \choice A protocol for encrypting Bluetooth data transmissions.
     \end{checkboxes}
 
+
+    \question{Consider the Bluetooth Authentication sketched in the figure below.}
+    \begin{solution}
+        \begin{enumerate}
+            \item A sends its Public Key PKa
+            \item B sends its Public Ket PKb
+            \item B selects a Random value Nb
+            \item A selects a Random value Na
+            \item B computes the confirmation Cb = f4(Pkb, Pia, Nb, 0)
+            \item B sends the confirmation Cb to A
+            \item A sends its nonce Na
+            \item B sends its nonce Nb
+            \item A checks if Cb = f4(Pkb, Pia, Nb, 0)
+        \end{enumerate}
+    \end{solution}
+
     \section{WWAN / mobile}
 
     \question{What is Stingray vulnerability?}
 
     \question{Which of the following are 2G vulnerabilities?}
 
-    \question{Ss7 vulnerability}
+    \question{What are the main security issues in SS7 (Signaling System No. 7)?}
+    \begin{checkboxes}
+        \CorrectChoice Caller ID spoofing and call redirection.
+        \CorrectChoice Interception of SMS messages and phone calls.
+        \choice Unauthorized access to subscriber billing information.
+        \choice Location tracking of mobile devices.
+        \choice None of the other options.
+    \end{checkboxes}
 
     \question{Purpose of paging and location are in mobile network}
 
@@ -429,15 +535,6 @@
         \choice Mobile Station (MS), Base Station Subsystem (BSS), and Network Switching Subsystem (NSS).
         \choice Mobile Management Entity (MME), Serving Gateway (SGW), and Packet Data Network Gateway (PGW).
         \choice None of the other options.
-    \end{checkboxes}
-
-    \question{What is the primary purpose of rate adaptation in WiFi networks?}
-    \begin{checkboxes}
-        \choice To adjust the transmission power of devices based on network conditions.
-        \choice To select the optimal data rate for transmitting data over the wireless channel based on the AP transmitter power.
-        \choice To select the optimal data rate for transmitting data over the wireless channel based on the distance from the AP.
-        \choice To adjust the transmission power of devices dynamically.
-        \CorrectChoice None of the others.
     \end{checkboxes}
 
     \question{Which of the following statements about PSK modulation is TRUE?}
